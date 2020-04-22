@@ -25,6 +25,9 @@ jobs:
         with:
           java-version: ${{ matrix.jdk }}
 
+      - name: Echo exact java version being used
+        run: java -version
+
       # https://help.github.com/en/actions/language-and-framework-guides/building-and-testing-java-with-maven#caching-dependencies
       - name: Cache Maven packages
         uses: actions/cache@v1
