@@ -40,11 +40,13 @@ import com.github.javaparser.symbolsolver.resolution.typesolvers.ReflectionTypeS
 import com.github.javaparser.symbolsolver.utils.LeanParserConfiguration;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Lists;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
@@ -659,7 +661,7 @@ class JavaParserClassDeclarationTest extends AbstractSymbolResolutionTest {
 
         List<String> signatures = sortedMethods.stream().map(m -> m.getQualifiedSignature()).collect(Collectors.toList());
 
-        assertEquals(ImmutableList.of("com.github.javaparser.ast.Node.addOrphanComment(com.github.javaparser.ast.comments.Comment)",
+        ImmutableList<String> expected = ImmutableList.of("com.github.javaparser.ast.Node.addOrphanComment(com.github.javaparser.ast.comments.Comment)",
                 "com.github.javaparser.ast.Node.clone()",
                 "com.github.javaparser.ast.Node.contains(com.github.javaparser.ast.Node)",
                 "com.github.javaparser.ast.Node.equals(java.lang.Object)",
@@ -759,7 +761,11 @@ class JavaParserClassDeclarationTest extends AbstractSymbolResolutionTest {
                 "java.lang.Object.registerNatives()",
                 "java.lang.Object.wait()",
                 "java.lang.Object.wait(long)",
-                "java.lang.Object.wait(long, int)"), signatures);
+                "java.lang.Object.wait(long, int)");
+
+//        assertArrayEquals(expected.toArray(), signatures.toArray());
+//        assertEquals(String.join("\n",expected), String.join("\n",signatures));
+        assertCollectionToStringEquals(expected, signatures);
     }
 
     ///

@@ -26,6 +26,9 @@ import com.github.javaparser.utils.CodeGenerationUtils;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Collection;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public abstract class AbstractSymbolResolutionTest {
 
@@ -43,5 +46,9 @@ public abstract class AbstractSymbolResolutionTest {
 
     protected static Path adaptPath(String path) {
         return adaptPath(Paths.get(path));
+    }
+
+    protected void assertCollectionToStringEquals(Collection<? extends CharSequence> expected, Collection<? extends CharSequence> actual) {
+        assertEquals(String.join("\n",expected), String.join("\n",actual));
     }
 }
