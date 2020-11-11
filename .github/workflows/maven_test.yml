@@ -14,7 +14,8 @@ jobs:
         ## Different JDK versions have different implementations etc. -- test on all combinations (ideally 8 to latest).
         ### exclude pre-8 (min development version jdk8)
         ### exclude post-12 (changes to jdk causes reflection tests to fail due to added methods #1701 )
-        jdk: [8,9,10,11,12] # [8,9,10,11,12,13,14,15-ea]
+        #jdk: [8,9,10,11,12] # [8,9,10,11,12,13,14,15-ea]
+        jdk: [15]
 
     runs-on: ${{ matrix.os }}
 
@@ -48,3 +49,12 @@ jobs:
       ### -P AlsoSlowTests : by default, only quick tests are run - the profile `AlsoSlowTests` runs the full test suite
       - name: Test with Maven (incl. slow tests)
         run: mvn -e -B test -P AlsoSlowTests
+
+      - name: CodeCov
+        uses: codecov/codecov-action@v1
+        if: matrix.os == 'ubuntu-latest' && github.repository == 'mysteraitch/javaparser'
+        timeout-minutes: 10
+        with:
+          file: target/coverage/jacoco.xml
+          fail_ci_if_error: true # optional (default = false)
+          verbose: true # optional (default = false):  
