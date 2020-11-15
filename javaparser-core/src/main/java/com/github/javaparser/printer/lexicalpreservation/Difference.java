@@ -21,20 +21,6 @@
 
 package com.github.javaparser.printer.lexicalpreservation;
 
-import static com.github.javaparser.GeneratedJavaParserConstants.LBRACE;
-import static com.github.javaparser.GeneratedJavaParserConstants.RBRACE;
-import static com.github.javaparser.GeneratedJavaParserConstants.SPACE;
-
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.EnumMap;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Map;
-import java.util.Optional;
-
 import com.github.javaparser.GeneratedJavaParserConstants;
 import com.github.javaparser.JavaToken;
 import com.github.javaparser.JavaToken.Kind;
@@ -50,6 +36,12 @@ import com.github.javaparser.printer.concretesyntaxmodel.CsmMix;
 import com.github.javaparser.printer.concretesyntaxmodel.CsmToken;
 import com.github.javaparser.printer.concretesyntaxmodel.CsmUnindent;
 import com.github.javaparser.printer.lexicalpreservation.LexicalDifferenceCalculator.CsmChild;
+
+import java.util.*;
+
+import static com.github.javaparser.GeneratedJavaParserConstants.LBRACE;
+import static com.github.javaparser.GeneratedJavaParserConstants.RBRACE;
+import static com.github.javaparser.GeneratedJavaParserConstants.SPACE;
 
 /**
  * A Difference should give me a sequence of elements I should find (to indicate the context) followed by a list of elements
@@ -189,15 +181,16 @@ public class Difference {
 
     private boolean applyLeftOverOriginalElements() {
         boolean isLeftOverElement = false;
+
+        // If there are no remaining differences to apply, AND we haven't reach the end of the original elements...
         if (diffIndex >= diffElements.size() && originalIndex < originalElements.size()) {
             TextElement originalElement = originalElements.get(originalIndex);
-
-            if (originalElement.isWhiteSpaceOrComment()) {
-                originalIndex++;
-            } else {
-                throw new UnsupportedOperationException("NodeText: " + nodeText + ". Difference: "
-                        + this + " " + originalElement);
+            if (!originalElement.isWhiteSpaceOrComment()) {
+                // If the element is whitespace or comment, there is no corresponding diffElement
+                diffIndex++;
             }
+            // Always move along the origial elements.
+            originalIndex++;
 
             isLeftOverElement = true;
         }
@@ -206,6 +199,8 @@ public class Difference {
 
     private boolean applyLeftOverDiffElements() {
         boolean isLeftOverElement = false;
+
+        // If there are differences still to apply, AND we have reach the end of the original elements...
         if (diffIndex < diffElements.size() && originalIndex >= originalElements.size()) {
             DifferenceElement diffElement = diffElements.get(diffIndex);
             if (diffElement instanceof Kept) {
@@ -214,8 +209,10 @@ public class Difference {
                 if (kept.isWhiteSpaceOrComment() || kept.isIndent() || kept.isUnindent()) {
                     diffIndex++;
                 } else {
-                    throw new IllegalStateException("Cannot keep element because we reached the end of nodetext: "
-                            + nodeText + ". Difference: " + this);
+                    throw new IllegalStateException(
+                            "Cannot keep element because we reached the end of nodeText: " + nodeText + ". " +
+                                    "Difference: " + this
+                    );
                 }
             } else if (diffElement instanceof Added) {
                 Added addedElement = (Added) diffElement;
@@ -223,6 +220,10 @@ public class Difference {
                 nodeText.addElement(originalIndex, addedElement.toTextElement());
                 originalIndex++;
                 diffIndex++;
+            } else if (diffElement instanceof Removed) {
+                throw new UnsupportedOperationException("Unable to remove elements - there are no originalElements remaining to remove");
+            } else if (diffElement instanceof Reshuffled) {
+                throw new UnsupportedOperationException("Unable to reshuffle elements - there are no originalElements remaining to reshuffle");
             } else {
                 throw new UnsupportedOperationException(diffElement.getClass().getSimpleName());
             }
@@ -476,9 +477,9 @@ public class Difference {
         }
     }
 
-    // note: 
+    // note:
     // increment originalIndex if we want to keep the original element
-    // increment diffIndex if we don't want to skip the diff element 
+    // increment diffIndex if we don't want to skip the diff element
     private void applyKeptDiffElement(Kept kept, TextElement originalElement, boolean originalElementIsChild, boolean originalElementIsToken) {
         if (originalElement.isComment()) {
             originalIndex++;
@@ -579,12 +580,12 @@ public class Difference {
      * For example,
      * List<String> is represented by 4 tokens ([List][<][String][>]) while it's a CsmChild element in the DiffElements list
      * So in this case, getIndexToNextTokenElement(..) on the [List] token returns 3 because we have to skip 3 tokens ([<][String][>]) to synchronize
-     * DiffElements list and originalElements list 
+     * DiffElements list and originalElements list
      * The end of recursivity is reached when there is no next token or if the nested diamond operators are totally managed, to take into account this type of declaration
      * List <List<String>> l
      * Be careful, this method must be call only if diamond operator could be found in the sequence
-     * 
-     * @Param TokenTextElement the token currently analyzed 
+     *
+     * @Param TokenTextElement the token currently analyzed
      * @Param int the number of nested diamond operators
      * @return the number of token to skip in originalElements list
      */
@@ -592,7 +593,7 @@ public class Difference {
         int step = 0; // number of token to skip
         Optional<JavaToken> next = element.getToken().getNextToken();
         if (!next.isPresent()) return step;
-        // because there is a token, first we need to increment the number of token to skip 
+        // because there is a token, first we need to increment the number of token to skip
         step++;
         // manage nested diamond operators by incrementing the level on LT token and decrementing on GT
         JavaToken token = next.get();
@@ -611,7 +612,7 @@ public class Difference {
         // recursively analyze token to skip
         return step += getIndexToNextTokenElement(new TokenTextElement(token), nestedDiamondOperator);
     }
-    
+
     /*
      * Returns true if the token is possibly a diamond operator
      */
