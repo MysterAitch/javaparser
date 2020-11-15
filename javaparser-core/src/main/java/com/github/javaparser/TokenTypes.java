@@ -93,7 +93,6 @@ public class TokenTypes {
     /**
      * Category of a token, a little more detailed than
      * <a href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-3.html#jls-3.5">The JLS</a>.
-     * FIXME: It appears that {@code ...} {@code ELLIPSIS} and {@code ::} {@code DOUBLECOLON} are (wrongly) listed in the "operators" section, rather than "separators"
      */
     public static JavaToken.Category getCategory(int kind) {
         switch (kind) {
@@ -200,7 +199,9 @@ public class TokenTypes {
             case SEMICOLON:
             case COMMA:
             case DOT:
+            case ELLIPSIS:
             case AT:
+            case DOUBLECOLON:
                 return JavaToken.Category.SEPARATOR;
             case ASSIGN:
             case LT:
@@ -236,9 +237,7 @@ public class TokenTypes {
             case LSHIFTASSIGN:
             case RSIGNEDSHIFTASSIGN:
             case RUNSIGNEDSHIFTASSIGN:
-            case ELLIPSIS:
             case ARROW:
-            case DOUBLECOLON:
             case RUNSIGNEDSHIFT:
             case RSIGNEDSHIFT:
             case GT:
