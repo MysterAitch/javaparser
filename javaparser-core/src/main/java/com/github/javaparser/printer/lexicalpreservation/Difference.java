@@ -184,13 +184,22 @@ public class Difference {
 
         // If there are no remaining differences to apply, AND we haven't reach the end of the original elements...
         if (diffIndex >= diffElements.size() && originalIndex < originalElements.size()) {
-            TextElement originalElement = originalElements.get(originalIndex);
-            if (!originalElement.isWhiteSpaceOrComment()) {
-                // If the element is whitespace or comment, there is no corresponding diffElement
-                diffIndex++;
+            /*
+             * Scan through the remaining originalElements.
+             * If there is anything other than whitespace or comments remaining, this is a problem
+             * because it should have a corresponding diffElement (kept).
+             */
+            while (originalIndex < originalElements.size()) {
+                TextElement originalElement = originalElements.get(originalIndex);
+                if (!originalElement.isWhiteSpaceOrComment()) {
+                    throw new UnsupportedOperationException(
+                            "NodeText: " + nodeText + ". " +
+                                    "Difference: " + this + " " + originalElement
+                    );
+                }
+                // Move to next element.
+                originalIndex++;
             }
-            // Always move along the origial elements.
-            originalIndex++;
 
             isLeftOverElement = true;
         }
