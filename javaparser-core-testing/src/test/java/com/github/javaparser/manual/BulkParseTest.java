@@ -59,6 +59,9 @@ class BulkParseTest {
          * These URLs are found by choosing a tag here in the source repo, then copying the "zip" link
          * http://hg.openjdk.java.net/jdk9/jdk9/langtools/tags
          * http://hg.openjdk.java.net/jdk10/jdk10/langtools/tags
+         *
+         * Note that from Java 11, the langtools are within the test directory of the JDK source code.
+         * It is to be confirmed whether the langtools directory can be downloaded in isolation.
          */
 
         // The langtools directory -- approximately 13 MiB
