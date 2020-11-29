@@ -23,7 +23,6 @@ package com.github.javaparser.manual;
 
 import com.github.javaparser.ParserConfiguration;
 import com.github.javaparser.Problem;
-import com.github.javaparser.utils.CodeGenerationUtils;
 import com.github.javaparser.utils.Log;
 import com.github.javaparser.utils.SourceRoot;
 import com.github.javaparser.utils.SourceZip;
@@ -37,22 +36,46 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
 import static com.github.javaparser.ParserConfiguration.LanguageLevel.*;
-import static com.github.javaparser.utils.CodeGenerationUtils.*;
 import static com.github.javaparser.utils.CodeGenerationUtils.f;
+import static com.github.javaparser.utils.CodeGenerationUtils.mavenModuleRoot;
 import static com.github.javaparser.utils.SourceRoot.Callback.Result.DONT_SAVE;
 import static com.github.javaparser.utils.TestUtils.download;
 import static com.github.javaparser.utils.TestUtils.temporaryDirectory;
 import static java.util.Comparator.comparing;
 
 class BulkParseTest {
+
+    private ParserConfiguration.LanguageLevel languageLevel = JAVA_8;
+
+    private static final Map<ParserConfiguration.LanguageLevel, String> downloadUrls_langTools = new HashMap<>();
+    private static final Map<ParserConfiguration.LanguageLevel, String> downloadUrls_jdk = new HashMap<>();
+
+    static {
+        /*
+         * These URLs are found by choosing a tag here in the source repo, then copying the "zip" link
+         * http://hg.openjdk.java.net/jdk9/jdk9/langtools/tags
+         * http://hg.openjdk.java.net/jdk10/jdk10/langtools/tags
+         */
+
+        // The langtools directory -- approximately 13 MiB
+        downloadUrls_langTools.put(JAVA_8, "http://hg.openjdk.java.net/jdk8/jdk8/langtools/archive/1ff9d5118aae.zip"); // 13.2 MiB
+        downloadUrls_langTools.put(JAVA_9, "http://hg.openjdk.java.net/jdk9/jdk9/langtools/archive/5ecbed313125.zip"); // 13.2 MiB
+        downloadUrls_langTools.put(JAVA_10, "http://hg.openjdk.java.net/jdk10/jdk10/langtools/archive/19293ea3999f.zip"); // 11.9 MiB
+
+        // The full java source directory -- approximately 160 MiB
+        downloadUrls_jdk.put(JAVA_15, "http://hg.openjdk.java.net/jdk-updates/jdk15u/archive/ac639af55573.zip"); // 163 MiB
+    }
+
+
     /**
-     * Running this will download a version of the OpenJDK, unzip it, and parse it. If it throws a stack overflow
-     * exception, increase the JVM's stack size.
+     * Running this will download a version of the OpenJDK / lang tools, unzip it, and parse it.
+     * If it throws a stack overflow exception, increase the JVM's stack size -- e.g. using -Xss32M
      */
     public static void main(String[] args) throws IOException {
         Log.setAdapter(new Log.StandardOutStandardErrorAdapter());
@@ -63,21 +86,51 @@ class BulkParseTest {
     }
 
     private void parseOpenJdkLangToolsRepository() throws IOException {
-        Path workdir = mavenModuleRoot(BulkParseTest.class).resolve(Paths.get(temporaryDirectory(), "javaparser_bulkparsetest"));
-        workdir.toFile().mkdirs();
-        Path openJdkZipPath = workdir.resolve("langtools.zip");
-        if (Files.notExists(openJdkZipPath)) {
-            Log.info("Downloading JDK langtools");
-            /* Found by choosing a tag here: http://hg.openjdk.java.net/jdk9/jdk9/langtools/tags
-             then copying the "zip" link to the line below: */
-            download(new URL("http://hg.openjdk.java.net/jdk10/jdk10/langtools/archive/19293ea3999f.zip"), openJdkZipPath);
+
+        // Config
+        String languageLevelName = languageLevel.name();
+        String openJdkZipName = "langtools" + languageLevelName + ".zip";
+
+        //
+        String downloadUrl = downloadUrls_langTools.get(languageLevel);
+        if(downloadUrl == null) {
+            Log.error("Download URL for " + languageLevel + " not specified.");
+            throw new RuntimeException("Download URL for " + languageLevel + " not specified.");
         }
-        bulkTest(new SourceZip(openJdkZipPath), "openjdk_src_repo_test_results.txt", new ParserConfiguration().setLanguageLevel(JAVA_10));
+
+        // Ensure that working directory is available.
+        Path workdir = mavenModuleRoot(BulkParseTest.class)
+                .resolve(Paths.get(
+                        temporaryDirectory(),
+                        "javaparser_bulkparsetest"
+                ));
+        workdir.toFile().mkdirs();
+
+        //
+        Path openJdkZipPath = workdir.resolve(openJdkZipName);
+
+        // Download it if it's not already downloaded
+        if (Files.notExists(openJdkZipPath)) {
+            Log.info(String.format("Downloading JDK %s langtools from %s", languageLevelName, downloadUrl));
+            download(new URL(downloadUrl), openJdkZipPath);
+        }
+
+        // Do the bulk test
+        bulkTest(
+                new SourceZip(openJdkZipPath),
+                "openjdk_"+ languageLevelName +"_src_repo_test_results.txt",
+                new ParserConfiguration().setLanguageLevel(languageLevel)
+        );
     }
 
     private void parseJdkSrcZip() throws IOException {
         // This is where Ubuntu stores the contents of package openjdk-8-src
         Path path = Paths.get("/usr/lib/jvm/openjdk-9/src.zip");
+        if (!path.toFile().exists()) {
+            Log.error("Source directory not available.");
+            throw new RuntimeException("Source directory not available.");
+        }
+
         bulkTest(new SourceZip(path), "openjdk_src_zip_test_results.txt", new ParserConfiguration().setLanguageLevel(JAVA_9));
     }
 
