@@ -119,8 +119,9 @@ class BulkParseTest {
 
         downloadUrls_langTools_snapshot.forEach((languageLevel, url) -> {
             try {
+                Log.info("bulk testing %s - lang tools, snapshot", () -> languageLevel);
                 // This contains all kinds of test cases so it will lead to a lot of errors:
-                new BulkParseTest().parseOpenJdkLangToolsRepository(languageLevel);
+                new BulkParseTest().parseOpenJdkLangToolsRepository(languageLevel, downloadUrls_langTools_snapshot);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -128,8 +129,9 @@ class BulkParseTest {
 
         downloadUrls_langTools_tip.forEach((languageLevel, url) -> {
             try {
+                Log.info("bulk testing %s - lang tools, tip", () -> languageLevel);
                 // This contains all kinds of test cases so it will lead to a lot of errors:
-                new BulkParseTest().parseOpenJdkLangToolsRepository(languageLevel);
+                new BulkParseTest().parseOpenJdkLangToolsRepository(languageLevel, downloadUrls_langTools_tip);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -137,8 +139,9 @@ class BulkParseTest {
 
         downloadUrls_jdk_snapshot.forEach((languageLevel, url) -> {
             try {
+                Log.info("bulk testing %s - jdk, snapshot", () -> languageLevel);
                 // This contains the JDK source code, so it should have zero errors:
-                new BulkParseTest().parseJdkSrcZip(languageLevel);
+                new BulkParseTest().parseJdkSrcZip(languageLevel, downloadUrls_jdk_snapshot);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -146,8 +149,9 @@ class BulkParseTest {
 
         downloadUrls_jdk_tip.forEach((languageLevel, url) -> {
             try {
+                Log.info("bulk testing %s - jdk, tip", () -> languageLevel);
                 // This contains the JDK source code, so it should have zero errors:
-                new BulkParseTest().parseJdkSrcZip(languageLevel);
+                new BulkParseTest().parseJdkSrcZip(languageLevel, downloadUrls_jdk_tip);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -187,10 +191,9 @@ class BulkParseTest {
     }
 
 
-    private void parseOpenJdkLangToolsRepository(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
+    private void parseOpenJdkLangToolsRepository(ParserConfiguration.LanguageLevel languageLevel, Map<ParserConfiguration.LanguageLevel, String> lookup) throws IOException {
         // Config
         String type = "langtools";
-        Map<ParserConfiguration.LanguageLevel, String> lookup = downloadUrls_langTools_snapshot;
 
         //
         String downloadUrl = lookup.get(languageLevel);
@@ -204,10 +207,9 @@ class BulkParseTest {
         }
     }
 
-    private void parseJdkSrcZip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
+    private void parseJdkSrcZip(ParserConfiguration.LanguageLevel languageLevel, Map<ParserConfiguration.LanguageLevel, String> lookup) throws IOException {
         // Config
         String type = "openjdk";
-        Map<ParserConfiguration.LanguageLevel, String> lookup = downloadUrls_jdk_tip;
 
         //
         String downloadUrl = lookup.get(languageLevel);
