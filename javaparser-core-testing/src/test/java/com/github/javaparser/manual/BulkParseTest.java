@@ -39,6 +39,7 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.TreeMap;
 
 import static com.github.javaparser.ParserConfiguration.LanguageLevel.*;
@@ -51,8 +52,10 @@ import static java.util.Comparator.comparing;
 
 class BulkParseTest {
 
-    private static final Map<ParserConfiguration.LanguageLevel, String> downloadUrls_langTools = new HashMap<>();
-    private static final Map<ParserConfiguration.LanguageLevel, String> downloadUrls_jdk = new HashMap<>();
+    private static final Map<ParserConfiguration.LanguageLevel, String> downloadUrls_langTools_snapshot = new HashMap<>();
+    private static final Map<ParserConfiguration.LanguageLevel, String> downloadUrls_langTools_tip = new HashMap<>();
+    private static final Map<ParserConfiguration.LanguageLevel, String> downloadUrls_jdk_tip = new HashMap<>();
+    private static final Map<ParserConfiguration.LanguageLevel, String> downloadUrls_jdk_snapshot = new HashMap<>();
 
     static {
         /*
@@ -65,40 +68,56 @@ class BulkParseTest {
          */
 
         // The langtools directory -- approximately 13 MiB
-        downloadUrls_langTools.put(JAVA_8, "http://hg.openjdk.java.net/jdk8/jdk8/langtools/archive/1ff9d5118aae.zip"); // 13.2 MiB
-        downloadUrls_langTools.put(JAVA_9, "http://hg.openjdk.java.net/jdk9/jdk9/langtools/archive/5ecbed313125.zip"); // 13.2 MiB
-        downloadUrls_langTools.put(JAVA_10, "http://hg.openjdk.java.net/jdk10/jdk10/langtools/archive/19293ea3999f.zip"); // 11.9 MiB
+        downloadUrls_langTools_snapshot.put(JAVA_6, "http://hg.openjdk.java.net/jdk6/jdk6/langtools/archive/779c45081059.zip"); // 4.6 MiB
+        downloadUrls_langTools_snapshot.put(JAVA_7, "http://hg.openjdk.java.net/jdk7/jdk7/langtools/archive/ce654f4ecfd8.zip"); // 5.8 MiB
+        downloadUrls_langTools_snapshot.put(JAVA_8, "http://hg.openjdk.java.net/jdk8/jdk8/langtools/archive/1ff9d5118aae.zip"); // 7.9 MiB
+        downloadUrls_langTools_snapshot.put(JAVA_9, "http://hg.openjdk.java.net/jdk9/jdk9/langtools/archive/5ecbed313125.zip"); // 13.2 MiB
+        downloadUrls_langTools_snapshot.put(JAVA_10, "http://hg.openjdk.java.net/jdk10/jdk10/langtools/archive/19293ea3999f.zip"); // 11.8 MiB
+
+        // The langtools directory -- approximately 13 MiB
+        downloadUrls_langTools_tip.put(JAVA_6, "http://hg.openjdk.java.net/jdk6/jdk6/langtools/archive/tip.zip");
+        downloadUrls_langTools_tip.put(JAVA_7, "http://hg.openjdk.java.net/jdk7/jdk7/langtools/archive/tip.zip");
+        downloadUrls_langTools_tip.put(JAVA_8, "http://hg.openjdk.java.net/jdk8/jdk8/langtools/archive/tip.zip");
+        downloadUrls_langTools_tip.put(JAVA_9, "http://hg.openjdk.java.net/jdk9/jdk9/langtools/archive/tip.zip");
+        downloadUrls_langTools_tip.put(JAVA_10, "http://hg.openjdk.java.net/jdk10/jdk10/langtools/archive/tip.zip");
 
         // The full java source directory -- approximately 160 MiB
-//        downloadUrls_jdk.put(JAVA_8, "http://hg.openjdk.java.net/jdk8/jdk8/jdk/archive/687fd7c7986d.zip"); // 163 MiB
-//        downloadUrls_jdk.put(JAVA_9, "");
-//        downloadUrls_jdk.put(JAVA_10, "");
-//        downloadUrls_jdk.put(JAVA_11, "");
-//        downloadUrls_jdk.put(JAVA_12, "");
-//        downloadUrls_jdk.put(JAVA_13, "http://hg.openjdk.java.net/jdk-updates/jdk13u/archive/158d79992f86.zip");
-//        downloadUrls_jdk.put(JAVA_14, "http://hg.openjdk.java.net/jdk-updates/jdk14u/archive/680a974138a1.zip");
-//        downloadUrls_jdk.put(JAVA_15, "http://hg.openjdk.java.net/jdk-updates/jdk15u/archive/ac639af55573.zip"); // 163 MiB
-        downloadUrls_jdk.put(JAVA_6, "http://hg.openjdk.java.net/jdk6/jdk6/archive/tip.zip");
-        downloadUrls_jdk.put(JAVA_7, "http://hg.openjdk.java.net/jdk7/jdk7/archive/tip.zip");
-        downloadUrls_jdk.put(JAVA_8, "http://hg.openjdk.java.net/jdk8/jdk8/archive/tip.zip");
-        downloadUrls_jdk.put(JAVA_9, "http://hg.openjdk.java.net/jdk9/jdk9/archive/tip.zip");
-        downloadUrls_jdk.put(JAVA_10, "http://hg.openjdk.java.net/jdk-updates/jdk10u/archive/tip.zip");
-        downloadUrls_jdk.put(JAVA_11, "http://hg.openjdk.java.net/jdk-updates/jdk11u/archive/tip.zip");
-        downloadUrls_jdk.put(JAVA_12, "http://hg.openjdk.java.net/jdk-updates/jdk12u/archive/tip.zip");
-        downloadUrls_jdk.put(JAVA_13, "http://hg.openjdk.java.net/jdk-updates/jdk13u/archive/tip.zip");
-        downloadUrls_jdk.put(JAVA_14, "http://hg.openjdk.java.net/jdk-updates/jdk14u/archive/tip.zip");
-        downloadUrls_jdk.put(JAVA_15, "http://hg.openjdk.java.net/jdk-updates/jdk15u/archive/tip.zip");
+        downloadUrls_jdk_snapshot.put(JAVA_6, "http://hg.openjdk.java.net/jdk6/jdk6/jdk/archive/8deef18bb749.zip"); // 2018-12-06
+        downloadUrls_jdk_snapshot.put(JAVA_7, "http://hg.openjdk.java.net/jdk7/jdk7/jdk/archive/9b8c96f96a0f.zip"); // 2011-06-27
+        downloadUrls_jdk_snapshot.put(JAVA_8, "http://hg.openjdk.java.net/jdk8/jdk8/jdk/archive/687fd7c7986d.zip"); // 2014-03-04 @ 163 MiB
+        downloadUrls_jdk_snapshot.put(JAVA_9, "http://hg.openjdk.java.net/jdk9/jdk9/jdk/archive/65464a307408.zip"); // 2017-08-03
+        downloadUrls_jdk_snapshot.put(JAVA_10, "http://hg.openjdk.java.net/jdk-updates/jdk10u/archive/2ba22d2e4ecf.zip"); // 2018-07-17
+        downloadUrls_jdk_snapshot.put(JAVA_11, "http://hg.openjdk.java.net/jdk-updates/jdk11u/archive/1356affa5e44.zip"); // 2020-11-25
+        downloadUrls_jdk_snapshot.put(JAVA_12, "http://hg.openjdk.java.net/jdk-updates/jdk12u/archive/390566f1850a.zip"); // 2019-07-25
+        downloadUrls_jdk_snapshot.put(JAVA_13, "http://hg.openjdk.java.net/jdk-updates/jdk13u/archive/158d79992f86.zip"); // 2020-11-06
+        downloadUrls_jdk_snapshot.put(JAVA_14, "http://hg.openjdk.java.net/jdk-updates/jdk14u/archive/680a974138a1.zip"); // 2020-07-09
+        downloadUrls_jdk_snapshot.put(JAVA_15, "http://hg.openjdk.java.net/jdk-updates/jdk15u/archive/ac639af55573.zip"); // 2020-11-18 @ 163 MiB
+
+        // The full java source directory -- approximately 160 MiB
+        downloadUrls_jdk_tip.put(JAVA_6, "http://hg.openjdk.java.net/jdk6/jdk6/archive/tip.zip");
+        downloadUrls_jdk_tip.put(JAVA_7, "http://hg.openjdk.java.net/jdk7/jdk7/archive/tip.zip");
+        downloadUrls_jdk_tip.put(JAVA_8, "http://hg.openjdk.java.net/jdk8/jdk8/archive/tip.zip");
+        downloadUrls_jdk_tip.put(JAVA_9, "http://hg.openjdk.java.net/jdk9/jdk9/archive/tip.zip");
+        downloadUrls_jdk_tip.put(JAVA_10, "http://hg.openjdk.java.net/jdk-updates/jdk10u/archive/tip.zip");
+        downloadUrls_jdk_tip.put(JAVA_11, "http://hg.openjdk.java.net/jdk-updates/jdk11u/archive/tip.zip");
+        downloadUrls_jdk_tip.put(JAVA_12, "http://hg.openjdk.java.net/jdk-updates/jdk12u/archive/tip.zip");
+        downloadUrls_jdk_tip.put(JAVA_13, "http://hg.openjdk.java.net/jdk-updates/jdk13u/archive/tip.zip");
+        downloadUrls_jdk_tip.put(JAVA_14, "http://hg.openjdk.java.net/jdk-updates/jdk14u/archive/tip.zip");
+        downloadUrls_jdk_tip.put(JAVA_15, "http://hg.openjdk.java.net/jdk-updates/jdk15u/archive/tip.zip");
     }
 
 
     /**
      * Running this will download a version of the OpenJDK / lang tools, unzip it, and parse it.
      * If it throws a stack overflow exception, increase the JVM's stack size -- e.g. using -Xss32M
+     *
+     * Note that there is a lot of duplication (e.g. tip/snapshot will typically resolve to the same version),
+     * but this is okay.
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Log.setAdapter(new Log.StandardOutStandardErrorAdapter());
 
-        downloadUrls_langTools.forEach((languageLevel, url) -> {
+        downloadUrls_langTools_snapshot.forEach((languageLevel, url) -> {
             try {
                 // This contains all kinds of test cases so it will lead to a lot of errors:
                 new BulkParseTest().parseOpenJdkLangToolsRepository(languageLevel);
@@ -107,7 +126,25 @@ class BulkParseTest {
             }
         });
 
-        downloadUrls_jdk.forEach((languageLevel, url) -> {
+        downloadUrls_langTools_tip.forEach((languageLevel, url) -> {
+            try {
+                // This contains all kinds of test cases so it will lead to a lot of errors:
+                new BulkParseTest().parseOpenJdkLangToolsRepository(languageLevel);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        downloadUrls_jdk_snapshot.forEach((languageLevel, url) -> {
+            try {
+                // This contains the JDK source code, so it should have zero errors:
+                new BulkParseTest().parseJdkSrcZip(languageLevel);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        downloadUrls_jdk_tip.forEach((languageLevel, url) -> {
             try {
                 // This contains the JDK source code, so it should have zero errors:
                 new BulkParseTest().parseJdkSrcZip(languageLevel);
@@ -118,14 +155,8 @@ class BulkParseTest {
 
     }
 
-    private void setupAndDoBulkTest(ParserConfiguration.LanguageLevel languageLevel, Map<ParserConfiguration.LanguageLevel, String> lookup, String languageLevelName, String type) throws IOException {
-
-        //
-        String downloadUrl = lookup.get(languageLevel);
-        if(downloadUrl == null) {
-            Log.error("Download URL for " + languageLevel + " not specified.");
-            throw new RuntimeException("Download URL for " + languageLevel + " not specified.");
-        }
+    private void setupAndDoBulkTest(ParserConfiguration.LanguageLevel languageLevel, String languageLevelName, String type, String downloadUrl) throws IOException {
+        Objects.requireNonNull(downloadUrl);
 
         // Ensure that working directory is available.
         Path workdir = mavenModuleRoot(BulkParseTest.class)
@@ -158,20 +189,36 @@ class BulkParseTest {
 
     private void parseOpenJdkLangToolsRepository(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
         // Config
-        Map<ParserConfiguration.LanguageLevel, String> lookup = downloadUrls_langTools;
-        String languageLevelName = languageLevel.name();
         String type = "langtools";
+        Map<ParserConfiguration.LanguageLevel, String> lookup = downloadUrls_langTools_snapshot;
 
-        setupAndDoBulkTest(languageLevel, lookup, languageLevelName, type);
+        //
+        String downloadUrl = lookup.get(languageLevel);
+        String languageLevelName = languageLevel.name();
+
+        //
+        if(downloadUrl == null) {
+            Log.error("Download URL for "+ type + " " + languageLevel + " not specified.");
+        } else {
+            setupAndDoBulkTest(languageLevel, languageLevelName, type, downloadUrl);
+        }
     }
 
     private void parseJdkSrcZip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
         // Config
-        Map<ParserConfiguration.LanguageLevel, String> lookup = downloadUrls_langTools;
-        String languageLevelName = languageLevel.name();
         String type = "openjdk";
+        Map<ParserConfiguration.LanguageLevel, String> lookup = downloadUrls_jdk_tip;
 
-        setupAndDoBulkTest(languageLevel, lookup, languageLevelName, type);
+        //
+        String downloadUrl = lookup.get(languageLevel);
+        String languageLevelName = languageLevel.name();
+
+        //
+        if(downloadUrl == null) {
+            Log.error("Download URL for " + languageLevel + " not specified.");
+        } else {
+            setupAndDoBulkTest(languageLevel, languageLevelName, type, downloadUrl);
+        }
     }
 
     @BeforeEach
@@ -232,7 +279,10 @@ class BulkParseTest {
     private void writeResults(TreeMap<Path, List<Problem>> results, String testResultsFileName) throws IOException {
         Log.info("Writing results...");
 
-        Path testResults = mavenModuleRoot(BulkParseTest.class).resolve(Paths.get("..", "javaparser-core-testing", "src", "test", "resources", "com", "github", "javaparser", "bulk_test_results")).normalize();
+        Path testResults = mavenModuleRoot(BulkParseTest.class)
+                .resolve(Paths.get("..", "javaparser-core-testing", "src", "test", "resources", "com", "github", "javaparser", "bulk_test_results"))
+                .normalize();
+
         testResults.toFile().mkdirs();
         testResults = testResults.resolve(testResultsFileName);
 
