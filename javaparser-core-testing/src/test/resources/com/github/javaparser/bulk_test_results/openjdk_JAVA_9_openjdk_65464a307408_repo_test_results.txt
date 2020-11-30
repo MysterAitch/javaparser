@@ -1,0 +1,4 @@
+jdk-65464a307408/test/javax/xml/bind/jxc/8073519/InputWithError.java
+(line 28,col 10) Parse error. Found "-", expected "("
+
+1 problems in 1 files

@@ -1,0 +1,1729 @@
+jdk-8deef18bb749/src/share/classes/com/sun/crypto/provider/SealedObjectForKeyProtector.java
+(line 60,col 13) The diamond operator is not supported.
+(line 63,col 29) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/com/sun/java/util/jar/pack/PackageReader.java
+(line 133,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/com/sun/jndi/ldap/PersistentSearchControl.java
+(line 116,col 9) The diamond operator is not supported.
+(line 136,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/com/sun/org/apache/xml/internal/security/transforms/implementations/FuncHereContext.java
+(line 98,col 10) The diamond operator is not supported.
+(line 117,col 10) The diamond operator is not supported.
+(line 136,col 10) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/java/rmi/server/LogStream.java
+(line 74,col 42) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/java/util/zip/ZipOutputStream.java
+(line 473,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/javax/management/Notification.java
+(line 254,col 9) The diamond operator is not supported.
+(line 369,col 7) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/javax/naming/ldap/SortControl.java
+(line 136,col 9) The diamond operator is not supported.
+(line 163,col 9) The diamond operator is not supported.
+(line 185,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/javax/swing/plaf/metal/MetalSplitPaneDivider.java
+(line 394,col 16) The diamond operator is not supported.
+(line 398,col 16) The diamond operator is not supported.
+(line 402,col 16) The diamond operator is not supported.
+(line 406,col 16) The diamond operator is not supported.
+(line 410,col 16) The diamond operator is not supported.
+(line 414,col 16) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharBig5.java
+(line 42,col 9) The diamond operator is not supported.
+(line 43,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp037.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1006.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1025.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1026.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1046.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1047.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1097.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1098.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1112.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1122.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1123.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1124.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1250.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1251.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1252.java
+(line 45,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1253.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1254.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1255.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1256.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1257.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1258.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1381.java
+(line 85,col 17) The diamond operator is not supported.
+(line 86,col 17) The diamond operator is not supported.
+(line 87,col 17) The diamond operator is not supported.
+(line 88,col 17) The diamond operator is not supported.
+(line 89,col 17) The diamond operator is not supported.
+(line 90,col 17) The diamond operator is not supported.
+(line 91,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp1383.java
+(line 51,col 13) The diamond operator is not supported.
+(line 52,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp273.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp277.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp278.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp280.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp284.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp285.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp297.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp420.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp424.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp437.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp500.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp737.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp775.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp834.java
+(line 36,col 9) The diamond operator is not supported.
+(line 37,col 9) The diamond operator is not supported.
+(line 38,col 9) The diamond operator is not supported.
+(line 39,col 9) The diamond operator is not supported.
+(line 40,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp838.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp850.java
+(line 44,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp852.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp855.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp856.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp857.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp860.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp861.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp862.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp863.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp864.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp865.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp866.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp868.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp869.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp870.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp871.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp874.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp875.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp918.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp921.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp922.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp930.java
+(line 48,col 17) The diamond operator is not supported.
+(line 49,col 17) The diamond operator is not supported.
+(line 50,col 17) The diamond operator is not supported.
+(line 51,col 17) The diamond operator is not supported.
+(line 52,col 17) The diamond operator is not supported.
+(line 53,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp933.java
+(line 49,col 17) The diamond operator is not supported.
+(line 50,col 17) The diamond operator is not supported.
+(line 51,col 17) The diamond operator is not supported.
+(line 52,col 17) The diamond operator is not supported.
+(line 53,col 17) The diamond operator is not supported.
+(line 54,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp935.java
+(line 49,col 17) The diamond operator is not supported.
+(line 50,col 17) The diamond operator is not supported.
+(line 51,col 17) The diamond operator is not supported.
+(line 52,col 17) The diamond operator is not supported.
+(line 53,col 17) The diamond operator is not supported.
+(line 54,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp937.java
+(line 48,col 17) The diamond operator is not supported.
+(line 49,col 17) The diamond operator is not supported.
+(line 50,col 17) The diamond operator is not supported.
+(line 51,col 17) The diamond operator is not supported.
+(line 52,col 17) The diamond operator is not supported.
+(line 53,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp939.java
+(line 48,col 17) The diamond operator is not supported.
+(line 49,col 17) The diamond operator is not supported.
+(line 50,col 17) The diamond operator is not supported.
+(line 51,col 17) The diamond operator is not supported.
+(line 52,col 17) The diamond operator is not supported.
+(line 53,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp942.java
+(line 120,col 17) The diamond operator is not supported.
+(line 121,col 17) The diamond operator is not supported.
+(line 122,col 17) The diamond operator is not supported.
+(line 123,col 17) The diamond operator is not supported.
+(line 124,col 17) The diamond operator is not supported.
+(line 125,col 17) The diamond operator is not supported.
+(line 126,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp942C.java
+(line 60,col 7) The diamond operator is not supported.
+(line 61,col 7) The diamond operator is not supported.
+(line 62,col 7) The diamond operator is not supported.
+(line 63,col 7) The diamond operator is not supported.
+(line 64,col 7) The diamond operator is not supported.
+(line 65,col 7) The diamond operator is not supported.
+(line 66,col 7) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp943.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+(line 51,col 9) The diamond operator is not supported.
+(line 52,col 9) The diamond operator is not supported.
+(line 53,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp943C.java
+(line 60,col 7) The diamond operator is not supported.
+(line 61,col 7) The diamond operator is not supported.
+(line 62,col 7) The diamond operator is not supported.
+(line 63,col 7) The diamond operator is not supported.
+(line 64,col 7) The diamond operator is not supported.
+(line 65,col 7) The diamond operator is not supported.
+(line 66,col 7) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp948.java
+(line 120,col 17) The diamond operator is not supported.
+(line 121,col 17) The diamond operator is not supported.
+(line 122,col 17) The diamond operator is not supported.
+(line 123,col 17) The diamond operator is not supported.
+(line 124,col 17) The diamond operator is not supported.
+(line 125,col 17) The diamond operator is not supported.
+(line 126,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp949.java
+(line 85,col 17) The diamond operator is not supported.
+(line 86,col 17) The diamond operator is not supported.
+(line 87,col 17) The diamond operator is not supported.
+(line 88,col 17) The diamond operator is not supported.
+(line 89,col 17) The diamond operator is not supported.
+(line 90,col 17) The diamond operator is not supported.
+(line 91,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp949C.java
+(line 60,col 7) The diamond operator is not supported.
+(line 61,col 7) The diamond operator is not supported.
+(line 62,col 7) The diamond operator is not supported.
+(line 63,col 7) The diamond operator is not supported.
+(line 64,col 7) The diamond operator is not supported.
+(line 65,col 7) The diamond operator is not supported.
+(line 66,col 7) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp950.java
+(line 120,col 17) The diamond operator is not supported.
+(line 121,col 17) The diamond operator is not supported.
+(line 122,col 17) The diamond operator is not supported.
+(line 123,col 17) The diamond operator is not supported.
+(line 124,col 17) The diamond operator is not supported.
+(line 125,col 17) The diamond operator is not supported.
+(line 126,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharCp970.java
+(line 50,col 13) The diamond operator is not supported.
+(line 51,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharEUC_CN.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharEUC_KR.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharGB18030.java
+(line 63,col 16) The diamond operator is not supported.
+(line 67,col 16) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharGB18030DB.java
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharGBK.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharHKSCS.java
+(line 43,col 9) The diamond operator is not supported.
+(line 44,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharHKSCS_2001.java
+(line 43,col 9) The diamond operator is not supported.
+(line 44,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharISO8859_13.java
+(line 45,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharISO8859_15.java
+(line 50,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharISO8859_2.java
+(line 45,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharISO8859_3.java
+(line 45,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharISO8859_4.java
+(line 45,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharISO8859_5.java
+(line 45,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharISO8859_6.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharISO8859_7.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharISO8859_8.java
+(line 45,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharISO8859_9.java
+(line 45,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharJIS0201.java
+(line 41,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharJIS0208.java
+(line 44,col 9) The diamond operator is not supported.
+(line 45,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharJIS0208_Solaris.java
+(line 53,col 9) The diamond operator is not supported.
+(line 54,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharJIS0212.java
+(line 49,col 9) The diamond operator is not supported.
+(line 50,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharJIS0212_Solaris.java
+(line 50,col 9) The diamond operator is not supported.
+(line 51,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharJohab.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharKOI8_R.java
+(line 45,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMacArabic.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMacCentralEurope.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMacCroatian.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMacCyrillic.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMacDingbat.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMacGreek.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMacHebrew.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMacIceland.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMacRoman.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMacRomania.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMacSymbol.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMacThai.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMacTurkish.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMacUkraine.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMS874.java
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMS932DB.java
+(line 39,col 9) The diamond operator is not supported.
+(line 40,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMS936.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMS949.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharMS950.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/ByteToCharTIS620.java
+(line 45,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteBig5.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp037.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1006.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1025.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1026.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1046.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1047.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1097.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1098.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1112.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1122.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1123.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1124.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1140.java
+(line 50,col 9) The diamond operator is not supported.
+(line 51,col 9) The diamond operator is not supported.
+(line 52,col 9) The diamond operator is not supported.
+(line 53,col 9) The diamond operator is not supported.
+(line 54,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1141.java
+(line 50,col 9) The diamond operator is not supported.
+(line 51,col 9) The diamond operator is not supported.
+(line 52,col 9) The diamond operator is not supported.
+(line 53,col 9) The diamond operator is not supported.
+(line 54,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1142.java
+(line 50,col 9) The diamond operator is not supported.
+(line 51,col 9) The diamond operator is not supported.
+(line 52,col 9) The diamond operator is not supported.
+(line 53,col 9) The diamond operator is not supported.
+(line 54,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1143.java
+(line 50,col 9) The diamond operator is not supported.
+(line 51,col 9) The diamond operator is not supported.
+(line 52,col 9) The diamond operator is not supported.
+(line 53,col 9) The diamond operator is not supported.
+(line 54,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1144.java
+(line 50,col 9) The diamond operator is not supported.
+(line 51,col 9) The diamond operator is not supported.
+(line 52,col 9) The diamond operator is not supported.
+(line 53,col 9) The diamond operator is not supported.
+(line 54,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1145.java
+(line 50,col 9) The diamond operator is not supported.
+(line 51,col 9) The diamond operator is not supported.
+(line 52,col 9) The diamond operator is not supported.
+(line 53,col 9) The diamond operator is not supported.
+(line 54,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1146.java
+(line 50,col 9) The diamond operator is not supported.
+(line 51,col 9) The diamond operator is not supported.
+(line 52,col 9) The diamond operator is not supported.
+(line 53,col 9) The diamond operator is not supported.
+(line 54,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1147.java
+(line 50,col 9) The diamond operator is not supported.
+(line 51,col 9) The diamond operator is not supported.
+(line 52,col 9) The diamond operator is not supported.
+(line 53,col 9) The diamond operator is not supported.
+(line 54,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1148.java
+(line 50,col 9) The diamond operator is not supported.
+(line 51,col 9) The diamond operator is not supported.
+(line 52,col 9) The diamond operator is not supported.
+(line 53,col 9) The diamond operator is not supported.
+(line 54,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1149.java
+(line 50,col 9) The diamond operator is not supported.
+(line 51,col 9) The diamond operator is not supported.
+(line 52,col 9) The diamond operator is not supported.
+(line 53,col 9) The diamond operator is not supported.
+(line 54,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1250.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+(line 50,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1251.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1252.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1253.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1254.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1255.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+(line 50,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1256.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+(line 50,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1257.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1258.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+(line 50,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1381.java
+(line 50,col 17) The diamond operator is not supported.
+(line 51,col 17) The diamond operator is not supported.
+(line 52,col 17) The diamond operator is not supported.
+(line 53,col 17) The diamond operator is not supported.
+(line 54,col 17) The diamond operator is not supported.
+(line 55,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp1383.java
+(line 50,col 17) The diamond operator is not supported.
+(line 51,col 17) The diamond operator is not supported.
+(line 52,col 17) The diamond operator is not supported.
+(line 53,col 17) The diamond operator is not supported.
+(line 54,col 17) The diamond operator is not supported.
+(line 55,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp273.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp277.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp278.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp280.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp284.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp285.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp297.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp33722.java
+(line 53,col 17) The diamond operator is not supported.
+(line 54,col 17) The diamond operator is not supported.
+(line 55,col 17) The diamond operator is not supported.
+(line 56,col 17) The diamond operator is not supported.
+(line 57,col 17) The diamond operator is not supported.
+(line 58,col 17) The diamond operator is not supported.
+(line 59,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp420.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp424.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp437.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp500.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp737.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp775.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp838.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp850.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp852.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp855.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp856.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp857.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp858.java
+(line 50,col 9) The diamond operator is not supported.
+(line 51,col 9) The diamond operator is not supported.
+(line 52,col 9) The diamond operator is not supported.
+(line 53,col 9) The diamond operator is not supported.
+(line 54,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp860.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp861.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp862.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp863.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp864.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp865.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp866.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp868.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp869.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp870.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp871.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp874.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp875.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp918.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp921.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp922.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp930.java
+(line 50,col 17) The diamond operator is not supported.
+(line 51,col 17) The diamond operator is not supported.
+(line 52,col 17) The diamond operator is not supported.
+(line 53,col 17) The diamond operator is not supported.
+(line 54,col 17) The diamond operator is not supported.
+(line 55,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp935.java
+(line 49,col 17) The diamond operator is not supported.
+(line 50,col 17) The diamond operator is not supported.
+(line 51,col 17) The diamond operator is not supported.
+(line 52,col 17) The diamond operator is not supported.
+(line 53,col 17) The diamond operator is not supported.
+(line 54,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp937.java
+(line 53,col 17) The diamond operator is not supported.
+(line 54,col 17) The diamond operator is not supported.
+(line 55,col 17) The diamond operator is not supported.
+(line 56,col 17) The diamond operator is not supported.
+(line 57,col 17) The diamond operator is not supported.
+(line 58,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp939.java
+(line 50,col 17) The diamond operator is not supported.
+(line 51,col 17) The diamond operator is not supported.
+(line 52,col 17) The diamond operator is not supported.
+(line 53,col 17) The diamond operator is not supported.
+(line 54,col 17) The diamond operator is not supported.
+(line 55,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp942.java
+(line 49,col 17) The diamond operator is not supported.
+(line 50,col 17) The diamond operator is not supported.
+(line 51,col 17) The diamond operator is not supported.
+(line 52,col 17) The diamond operator is not supported.
+(line 53,col 17) The diamond operator is not supported.
+(line 54,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp942C.java
+(line 64,col 7) The diamond operator is not supported.
+(line 65,col 7) The diamond operator is not supported.
+(line 66,col 7) The diamond operator is not supported.
+(line 67,col 7) The diamond operator is not supported.
+(line 68,col 7) The diamond operator is not supported.
+(line 69,col 7) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp943.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+(line 50,col 9) The diamond operator is not supported.
+(line 51,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp943C.java
+(line 64,col 7) The diamond operator is not supported.
+(line 65,col 7) The diamond operator is not supported.
+(line 66,col 7) The diamond operator is not supported.
+(line 67,col 7) The diamond operator is not supported.
+(line 68,col 7) The diamond operator is not supported.
+(line 69,col 7) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp948.java
+(line 50,col 17) The diamond operator is not supported.
+(line 51,col 17) The diamond operator is not supported.
+(line 52,col 17) The diamond operator is not supported.
+(line 53,col 17) The diamond operator is not supported.
+(line 54,col 17) The diamond operator is not supported.
+(line 55,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp950.java
+(line 49,col 17) The diamond operator is not supported.
+(line 50,col 17) The diamond operator is not supported.
+(line 51,col 17) The diamond operator is not supported.
+(line 52,col 17) The diamond operator is not supported.
+(line 53,col 17) The diamond operator is not supported.
+(line 54,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteCp964.java
+(line 53,col 17) The diamond operator is not supported.
+(line 54,col 17) The diamond operator is not supported.
+(line 55,col 17) The diamond operator is not supported.
+(line 56,col 17) The diamond operator is not supported.
+(line 57,col 17) The diamond operator is not supported.
+(line 58,col 17) The diamond operator is not supported.
+(line 59,col 17) The diamond operator is not supported.
+(line 60,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteEUC_CN.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteEUC_KR.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteGBK.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteHKSCS.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteHKSCS_2001.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteISO8859_13.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteISO8859_15.java
+(line 50,col 9) The diamond operator is not supported.
+(line 51,col 9) The diamond operator is not supported.
+(line 52,col 9) The diamond operator is not supported.
+(line 53,col 9) The diamond operator is not supported.
+(line 54,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteISO8859_2.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteISO8859_3.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteISO8859_4.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteISO8859_5.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteISO8859_6.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+(line 50,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteISO8859_7.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+(line 50,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteISO8859_8.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteISO8859_9.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteJIS0201.java
+(line 41,col 9) The diamond operator is not supported.
+(line 42,col 9) The diamond operator is not supported.
+(line 43,col 9) The diamond operator is not supported.
+(line 44,col 9) The diamond operator is not supported.
+(line 45,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteJIS0208.java
+(line 44,col 9) The diamond operator is not supported.
+(line 45,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteJIS0208_Solaris.java
+(line 49,col 9) The diamond operator is not supported.
+(line 50,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteJIS0212.java
+(line 42,col 9) The diamond operator is not supported.
+(line 43,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteJIS0212_Solaris.java
+(line 44,col 9) The diamond operator is not supported.
+(line 45,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteJohab.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteKOI8_R.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMacArabic.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMacCentralEurope.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMacCroatian.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMacCyrillic.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMacDingbat.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMacGreek.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMacHebrew.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMacIceland.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMacRoman.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMacRomania.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMacSymbol.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMacThai.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMacTurkish.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMacUkraine.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMS874.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+(line 50,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMS932DB.java
+(line 39,col 9) The diamond operator is not supported.
+(line 40,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMS936.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMS949.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteMS950.java
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/io/CharToByteTIS620.java
+(line 45,col 9) The diamond operator is not supported.
+(line 46,col 9) The diamond operator is not supported.
+(line 47,col 9) The diamond operator is not supported.
+(line 48,col 9) The diamond operator is not supported.
+(line 49,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/misc/UCEncoder.java
+(line 167,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/misc/UUEncoder.java
+(line 181,col 9) The diamond operator is not supported.
+(line 182,col 9) The diamond operator is not supported.
+(line 184,col 13) The diamond operator is not supported.
+(line 186,col 13) The diamond operator is not supported.
+(line 188,col 9) The diamond operator is not supported.
+(line 196,col 9) The diamond operator is not supported.
+(line 197,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/nio/cs/ext/IBM1381.java
+(line 102,col 17) The diamond operator is not supported.
+(line 103,col 17) The diamond operator is not supported.
+(line 104,col 17) The diamond operator is not supported.
+(line 105,col 17) The diamond operator is not supported.
+(line 106,col 17) The diamond operator is not supported.
+(line 107,col 17) The diamond operator is not supported.
+(line 108,col 17) The diamond operator is not supported.
+(line 1412,col 13) The diamond operator is not supported.
+(line 1413,col 13) The diamond operator is not supported.
+(line 1414,col 13) The diamond operator is not supported.
+(line 1415,col 13) The diamond operator is not supported.
+(line 1416,col 13) The diamond operator is not supported.
+(line 1417,col 13) The diamond operator is not supported.
+(line 1422,col 13) The diamond operator is not supported.
+(line 1423,col 13) The diamond operator is not supported.
+(line 1424,col 13) The diamond operator is not supported.
+(line 1425,col 13) The diamond operator is not supported.
+(line 1426,col 13) The diamond operator is not supported.
+(line 1427,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/nio/cs/ext/IBM1383.java
+(line 85,col 17) The diamond operator is not supported.
+(line 86,col 17) The diamond operator is not supported.
+(line 1228,col 13) The diamond operator is not supported.
+(line 1229,col 13) The diamond operator is not supported.
+(line 1230,col 13) The diamond operator is not supported.
+(line 1231,col 13) The diamond operator is not supported.
+(line 1232,col 13) The diamond operator is not supported.
+(line 1233,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/nio/cs/ext/IBM33722.java
+(line 2523,col 13) The diamond operator is not supported.
+(line 2524,col 13) The diamond operator is not supported.
+(line 2525,col 13) The diamond operator is not supported.
+(line 2526,col 13) The diamond operator is not supported.
+(line 2527,col 13) The diamond operator is not supported.
+(line 2528,col 13) The diamond operator is not supported.
+(line 2529,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/nio/cs/ext/IBM834.java
+(line 60,col 13) The diamond operator is not supported.
+(line 61,col 13) The diamond operator is not supported.
+(line 62,col 13) The diamond operator is not supported.
+(line 63,col 13) The diamond operator is not supported.
+(line 64,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/nio/cs/ext/IBM930.java
+(line 100,col 17) The diamond operator is not supported.
+(line 101,col 17) The diamond operator is not supported.
+(line 102,col 17) The diamond operator is not supported.
+(line 103,col 17) The diamond operator is not supported.
+(line 104,col 17) The diamond operator is not supported.
+(line 105,col 17) The diamond operator is not supported.
+(line 1494,col 13) The diamond operator is not supported.
+(line 1495,col 13) The diamond operator is not supported.
+(line 1496,col 13) The diamond operator is not supported.
+(line 1497,col 13) The diamond operator is not supported.
+(line 1498,col 13) The diamond operator is not supported.
+(line 1499,col 13) The diamond operator is not supported.
+(line 1504,col 13) The diamond operator is not supported.
+(line 1505,col 13) The diamond operator is not supported.
+(line 1506,col 13) The diamond operator is not supported.
+(line 1507,col 13) The diamond operator is not supported.
+(line 1508,col 13) The diamond operator is not supported.
+(line 1509,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/nio/cs/ext/IBM933.java
+(line 102,col 13) The diamond operator is not supported.
+(line 103,col 13) The diamond operator is not supported.
+(line 104,col 13) The diamond operator is not supported.
+(line 105,col 13) The diamond operator is not supported.
+(line 106,col 13) The diamond operator is not supported.
+(line 107,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/nio/cs/ext/IBM935.java
+(line 98,col 17) The diamond operator is not supported.
+(line 99,col 17) The diamond operator is not supported.
+(line 100,col 17) The diamond operator is not supported.
+(line 101,col 17) The diamond operator is not supported.
+(line 102,col 17) The diamond operator is not supported.
+(line 103,col 17) The diamond operator is not supported.
+(line 1287,col 13) The diamond operator is not supported.
+(line 1288,col 13) The diamond operator is not supported.
+(line 1289,col 13) The diamond operator is not supported.
+(line 1290,col 13) The diamond operator is not supported.
+(line 1291,col 13) The diamond operator is not supported.
+(line 1292,col 13) The diamond operator is not supported.
+(line 1297,col 13) The diamond operator is not supported.
+(line 1298,col 13) The diamond operator is not supported.
+(line 1299,col 13) The diamond operator is not supported.
+(line 1300,col 13) The diamond operator is not supported.
+(line 1301,col 13) The diamond operator is not supported.
+(line 1302,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/nio/cs/ext/IBM937.java
+(line 98,col 17) The diamond operator is not supported.
+(line 99,col 17) The diamond operator is not supported.
+(line 100,col 17) The diamond operator is not supported.
+(line 101,col 17) The diamond operator is not supported.
+(line 102,col 17) The diamond operator is not supported.
+(line 103,col 17) The diamond operator is not supported.
+(line 2398,col 13) The diamond operator is not supported.
+(line 2399,col 13) The diamond operator is not supported.
+(line 2400,col 13) The diamond operator is not supported.
+(line 2401,col 13) The diamond operator is not supported.
+(line 2402,col 13) The diamond operator is not supported.
+(line 2403,col 13) The diamond operator is not supported.
+(line 2408,col 13) The diamond operator is not supported.
+(line 2409,col 13) The diamond operator is not supported.
+(line 2410,col 13) The diamond operator is not supported.
+(line 2411,col 13) The diamond operator is not supported.
+(line 2412,col 13) The diamond operator is not supported.
+(line 2413,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/nio/cs/ext/IBM939.java
+(line 100,col 17) The diamond operator is not supported.
+(line 101,col 17) The diamond operator is not supported.
+(line 102,col 17) The diamond operator is not supported.
+(line 103,col 17) The diamond operator is not supported.
+(line 104,col 17) The diamond operator is not supported.
+(line 105,col 17) The diamond operator is not supported.
+(line 1491,col 13) The diamond operator is not supported.
+(line 1492,col 13) The diamond operator is not supported.
+(line 1493,col 13) The diamond operator is not supported.
+(line 1494,col 13) The diamond operator is not supported.
+(line 1495,col 13) The diamond operator is not supported.
+(line 1496,col 13) The diamond operator is not supported.
+(line 1501,col 13) The diamond operator is not supported.
+(line 1502,col 13) The diamond operator is not supported.
+(line 1503,col 13) The diamond operator is not supported.
+(line 1504,col 13) The diamond operator is not supported.
+(line 1505,col 13) The diamond operator is not supported.
+(line 1506,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/nio/cs/ext/IBM942.java
+(line 84,col 13) The diamond operator is not supported.
+(line 85,col 13) The diamond operator is not supported.
+(line 86,col 13) The diamond operator is not supported.
+(line 87,col 13) The diamond operator is not supported.
+(line 88,col 13) The diamond operator is not supported.
+(line 89,col 13) The diamond operator is not supported.
+(line 94,col 17) The diamond operator is not supported.
+(line 100,col 17) The diamond operator is not supported.
+(line 1276,col 13) The diamond operator is not supported.
+(line 1277,col 13) The diamond operator is not supported.
+(line 1278,col 13) The diamond operator is not supported.
+(line 1279,col 13) The diamond operator is not supported.
+(line 1280,col 13) The diamond operator is not supported.
+(line 1281,col 13) The diamond operator is not supported.
+(line 1286,col 13) The diamond operator is not supported.
+(line 1287,col 13) The diamond operator is not supported.
+(line 1288,col 13) The diamond operator is not supported.
+(line 1289,col 13) The diamond operator is not supported.
+(line 1290,col 13) The diamond operator is not supported.
+(line 1291,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/nio/cs/ext/IBM943.java
+(line 82,col 13) The diamond operator is not supported.
+(line 83,col 13) The diamond operator is not supported.
+(line 84,col 13) The diamond operator is not supported.
+(line 85,col 13) The diamond operator is not supported.
+(line 86,col 13) The diamond operator is not supported.
+(line 87,col 13) The diamond operator is not supported.
+(line 92,col 13) The diamond operator is not supported.
+(line 98,col 13) The diamond operator is not supported.
+(line 1336,col 13) The diamond operator is not supported.
+(line 1337,col 13) The diamond operator is not supported.
+(line 1338,col 13) The diamond operator is not supported.
+(line 1339,col 13) The diamond operator is not supported.
+(line 1340,col 13) The diamond operator is not supported.
+(line 1341,col 13) The diamond operator is not supported.
+(line 1346,col 13) The diamond operator is not supported.
+(line 1347,col 13) The diamond operator is not supported.
+(line 1348,col 13) The diamond operator is not supported.
+(line 1349,col 13) The diamond operator is not supported.
+(line 1350,col 13) The diamond operator is not supported.
+(line 1351,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/nio/cs/ext/IBM948.java
+(line 84,col 17) The diamond operator is not supported.
+(line 85,col 17) The diamond operator is not supported.
+(line 86,col 17) The diamond operator is not supported.
+(line 87,col 17) The diamond operator is not supported.
+(line 88,col 17) The diamond operator is not supported.
+(line 89,col 17) The diamond operator is not supported.
+(line 90,col 17) The diamond operator is not supported.
+(line 2423,col 13) The diamond operator is not supported.
+(line 2424,col 13) The diamond operator is not supported.
+(line 2425,col 13) The diamond operator is not supported.
+(line 2426,col 13) The diamond operator is not supported.
+(line 2427,col 13) The diamond operator is not supported.
+(line 2428,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/nio/cs/ext/IBM949.java
+(line 104,col 17) The diamond operator is not supported.
+(line 105,col 17) The diamond operator is not supported.
+(line 106,col 17) The diamond operator is not supported.
+(line 107,col 17) The diamond operator is not supported.
+(line 108,col 17) The diamond operator is not supported.
+(line 109,col 17) The diamond operator is not supported.
+(line 114,col 17) The diamond operator is not supported.
+(line 119,col 17) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/nio/cs/ext/IBM950.java
+(line 83,col 17) The diamond operator is not supported.
+(line 84,col 17) The diamond operator is not supported.
+(line 85,col 17) The diamond operator is not supported.
+(line 86,col 17) The diamond operator is not supported.
+(line 87,col 17) The diamond operator is not supported.
+(line 88,col 17) The diamond operator is not supported.
+(line 89,col 17) The diamond operator is not supported.
+(line 2493,col 13) The diamond operator is not supported.
+(line 2494,col 13) The diamond operator is not supported.
+(line 2495,col 13) The diamond operator is not supported.
+(line 2496,col 13) The diamond operator is not supported.
+(line 2497,col 13) The diamond operator is not supported.
+(line 2498,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/nio/cs/ext/IBM964.java
+(line 4728,col 13) The diamond operator is not supported.
+(line 4729,col 13) The diamond operator is not supported.
+(line 4730,col 13) The diamond operator is not supported.
+(line 4731,col 13) The diamond operator is not supported.
+(line 4732,col 13) The diamond operator is not supported.
+(line 4733,col 13) The diamond operator is not supported.
+(line 4734,col 13) The diamond operator is not supported.
+(line 4735,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/nio/cs/ext/IBM970.java
+(line 90,col 13) The diamond operator is not supported.
+(line 91,col 13) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/print/PSPrinterJob.java
+(line 501,col 31) The diamond operator is not supported.
+(line 502,col 21) The diamond operator is not supported.
+(line 504,col 36) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/rmi/runtime/Log.java
+(line 311,col 46) The diamond operator is not supported.
+
+jdk-8deef18bb749/src/share/classes/sun/util/CoreResourceBundleControl-XLocales.java
+Lexical error at line 26, column 1.  Encountered: "#" (35), after : ""
+
+jdk-8deef18bb749/src/share/classes/sun/util/LocaleDataMetaInfo-XLocales.java
+Lexical error at line 26, column 1.  Encountered: "#" (35), after : ""
+
+jdk-8deef18bb749/test/com/sun/tools/attach/Application.java
+(line 51,col 9) Try has no finally and no catch.
+(line 51,col 9) Catch with resource is not supported.
+
+jdk-8deef18bb749/test/java/awt/im/8041990/bug8041990.java
+(line 76,col 68) The diamond operator is not supported.
+
+jdk-8deef18bb749/test/java/awt/image/BufferedImage/ICMColorDataTest/ICMColorDataTest.java
+(line 55,col 34) Underscores in literal values are not supported.
+(line 58,col 18) Multi-catch is not supported.
+
+jdk-8deef18bb749/test/java/io/File/NulFile.java
+(line 564,col 18) Multi-catch is not supported.
+
+jdk-8deef18bb749/test/java/io/Serializable/serialFilter/SerialFilterTest.java
+(line 140,col 40) The diamond operator is not supported.
+(line 442,col 38) The diamond operator is not supported.
+
+jdk-8deef18bb749/test/java/io/Serializable/unresolvableObjectStreamClass/UnresolvableObjectStreamClass.java
+(line 39,col 13) Try has no finally and no catch.
+(line 39,col 13) Catch with resource is not supported.
+(line 46,col 13) Try has no finally and no catch.
+(line 46,col 13) Catch with resource is not supported.
+
+jdk-8deef18bb749/test/java/lang/annotation/AnnotationType/AnnotationTypeRuntimeAssumptionTest.java
+(line 149,col 17) Catch with resource is not supported.
+(line 172,col 17) Catch with resource is not supported.
+
+jdk-8deef18bb749/test/java/lang/Runtime/exec/ExecCommand.java
+(line 119,col 17) Try has no finally and no catch.
+(line 119,col 17) Catch with resource is not supported.
+
+jdk-8deef18bb749/test/java/rmi/registry/nonLocalRegistry/NonLocalRegistryTest.java
+(line 64,col 40) The diamond operator is not supported.
+(line 69,col 42) The diamond operator is not supported.
+
+jdk-8deef18bb749/test/java/util/Formatter/Basic-X.java
+Lexical error at line 31, column 1.  Encountered: "#" (35), after : ""
+
+jdk-8deef18bb749/test/java/util/logging/bundlesearch/ResourceBundleSearchTest.java
+(line 59,col 44) The diamond operator is not supported.
+
+jdk-8deef18bb749/test/java/util/logging/DrainFindDeadlockTest.java
+(line 125,col 26) Multi-catch is not supported.
+
+jdk-8deef18bb749/test/java/util/logging/FileHandlerMaxLocksTest.java
+(line 52,col 46) The diamond operator is not supported.
+
+jdk-8deef18bb749/test/javax/net/ssl/TLSv12/DisabledShortDSAKeys.java
+(line 154,col 9) Catch with resource is not supported.
+(line 155,col 13) Try has no finally and no catch.
+(line 155,col 13) Catch with resource is not supported.
+(line 184,col 9) Catch with resource is not supported.
+(line 194,col 13) Try has no finally and no catch.
+(line 194,col 13) Catch with resource is not supported.
+
+jdk-8deef18bb749/test/javax/security/auth/Subject/doAs/NestedActions.java
+(line 115,col 9) Try has no finally and no catch.
+(line 115,col 9) Catch with resource is not supported.
+(line 120,col 17) Try has no finally and no catch.
+(line 120,col 17) Catch with resource is not supported.
+
+jdk-8deef18bb749/test/javax/xml/ws/8046817/GenerateEnumSchema.java
+(line 154,col 18) Multi-catch is not supported.
+
+jdk-8deef18bb749/test/sun/management/jmxremote/bootstrap/RmiBootstrapTest.java
+(line 906,col 9) Try has no finally and no catch.
+(line 906,col 9) Catch with resource is not supported.
+
+jdk-8deef18bb749/test/sun/security/krb5/ccache/EmptyCC.java
+(line 64,col 13) Try has no finally and no catch.
+(line 64,col 13) Catch with resource is not supported.
+
+jdk-8deef18bb749/test/sun/security/krb5/EncTypeTest.java
+(line 42,col 9) Try has no finally and no catch.
+(line 42,col 9) Catch with resource is not supported.
+
+jdk-8deef18bb749/test/sun/security/mscapi/SignUsingNONEwithRSA.java
+(line 83,col 59) The diamond operator is not supported.
+
+jdk-8deef18bb749/test/sun/security/mscapi/SignUsingSHA2withRSA.java
+(line 37,col 59) The diamond operator is not supported.
+
+jdk-8deef18bb749/test/sun/security/provider/certpath/ReverseBuilder/ReverseBuild.java
+(line 291,col 55) The diamond operator is not supported.
+(line 314,col 43) The diamond operator is not supported.
+
+jdk-8deef18bb749/test/sun/security/provider/NSASuiteB/TestDSAGenParameterSpec.java
+(line 142,col 22) Lambdas are not supported.
+(line 142,col 49) Lambdas are not supported.
+
+jdk-8deef18bb749/test/sun/security/ssl/CipherSuite/NoDesRC4CiphSuite.java
+(line 304,col 41) The diamond operator is not supported.
+
+jdk-8deef18bb749/test/sun/security/ssl/DHKeyExchange/LegacyDHEKeyExchange.java
+(line 98,col 9) Catch with resource is not supported.
+
+jdk-8deef18bb749/test/sun/security/ssl/javax/net/ssl/NewAPIs/SessionCacheSizeTests.java
+(line 111,col 9) Try has no finally and no catch.
+(line 111,col 9) Catch with resource is not supported.
+(line 140,col 17) Try has no finally and no catch.
+(line 140,col 17) Catch with resource is not supported.
+
+jdk-8deef18bb749/test/sun/security/tools/jarsigner/DefaultSigalg.java
+(line 75,col 9) Try has no finally and no catch.
+(line 75,col 9) Catch with resource is not supported.
+(line 94,col 17) Try has no finally and no catch.
+(line 94,col 17) Catch with resource is not supported.
+
+jdk-8deef18bb749/test/sun/security/tools/jarsigner/TsacertOptionTest.java
+(line 107,col 9) Try has no finally and no catch.
+(line 107,col 9) Catch with resource is not supported.
+
+jdk-8deef18bb749/test/tools/launcher/UnresolvedExceptions.java
+(line 42,col 35) The diamond operator is not supported.
+
+jdk-8deef18bb749/test/tools/pack200/pack200-verifier/src/xmlkit/ClassReader.java
+(line 273,col 9) The diamond operator is not supported.
+
+jdk-8deef18bb749/test/tools/pack200/PackTestZip64.java
+(line 57,col 37) The diamond operator is not supported.
+(line 124,col 9) Try has no finally and no catch.
+(line 124,col 9) Catch with resource is not supported.
+
+jdk-8deef18bb749/test/tools/pack200/TestExceptions.java
+(line 288,col 30) The diamond operator is not supported.
+(line 292,col 35) The diamond operator is not supported.
+(line 303,col 37) The diamond operator is not supported.
+(line 307,col 35) The diamond operator is not supported.
+(line 318,col 34) The diamond operator is not supported.
+(line 322,col 38) The diamond operator is not supported.
+(line 333,col 27) The diamond operator is not supported.
+(line 337,col 38) The diamond operator is not supported.
+
+1118 problems in 305 files
