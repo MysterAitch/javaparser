@@ -118,14 +118,10 @@ class BulkParseTest {
 
     }
 
-    private void parseOpenJdkLangToolsRepository(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
-
-        // Config
-        String languageLevelName = languageLevel.name();
-        String openJdkZipName = "langtools-" + languageLevelName + ".zip";
+    private void setupAndDoBulkTest(ParserConfiguration.LanguageLevel languageLevel, Map<ParserConfiguration.LanguageLevel, String> lookup, String languageLevelName, String type) throws IOException {
 
         //
-        String downloadUrl = downloadUrls_langTools.get(languageLevel);
+        String downloadUrl = lookup.get(languageLevel);
         if(downloadUrl == null) {
             Log.error("Download URL for " + languageLevel + " not specified.");
             throw new RuntimeException("Download URL for " + languageLevel + " not specified.");
@@ -140,58 +136,42 @@ class BulkParseTest {
         workdir.toFile().mkdirs();
 
         //
-        Path openJdkZipPath = workdir.resolve(openJdkZipName);
+        String[] split = downloadUrl.split("/");
+        String replace = split[split.length - 1].replace(".zip", "");
+        String zipName = type + "-" + languageLevelName  + "-" + replace  + ".zip";
+        Path zipPath = workdir.resolve(zipName);
 
         // Download it if it's not already downloaded
-        if (Files.notExists(openJdkZipPath)) {
-            Log.info(String.format("Downloading JDK %s langtools from %s to %s", languageLevelName, downloadUrl, openJdkZipPath.toString()));
-            download(new URL(downloadUrl), openJdkZipPath);
+        if (Files.notExists(zipPath)) {
+            Log.info(String.format("Downloading JDK %s " + type + " from %s to %s", languageLevelName, downloadUrl, zipPath.toString()));
+            download(new URL(downloadUrl), zipPath);
         }
 
         // Do the bulk test
         bulkTest(
-                new SourceZip(openJdkZipPath),
-                "openjdk_"+ languageLevelName +"_" + "langtools" + "_repo_test_results.txt",
+                new SourceZip(zipPath),
+                "openjdk_"+ languageLevelName +"_" + type + "_" + replace + "_repo_test_results.txt",
                 new ParserConfiguration().setLanguageLevel(languageLevel)
         );
     }
 
-    private void parseJdkSrcZip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
 
+    private void parseOpenJdkLangToolsRepository(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
         // Config
+        Map<ParserConfiguration.LanguageLevel, String> lookup = downloadUrls_langTools;
         String languageLevelName = languageLevel.name();
-        String openJdkZipName = "openjdk-" + languageLevelName + ".zip";
+        String type = "langtools";
 
-        //
-        String downloadUrl = downloadUrls_jdk.get(languageLevel);
-        if(downloadUrl == null) {
-            Log.error("Download URL for " + languageLevel + " not specified.");
-            throw new RuntimeException("Download URL for " + languageLevel + " not specified.");
-        }
+        setupAndDoBulkTest(languageLevel, lookup, languageLevelName, type);
+    }
 
-        // Ensure that working directory is available.
-        Path workdir = mavenModuleRoot(BulkParseTest.class)
-                .resolve(Paths.get(
-                        temporaryDirectory(),
-                        "javaparser_bulkparsetest"
-                ));
-        workdir.toFile().mkdirs();
+    private void parseJdkSrcZip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
+        // Config
+        Map<ParserConfiguration.LanguageLevel, String> lookup = downloadUrls_langTools;
+        String languageLevelName = languageLevel.name();
+        String type = "openjdk";
 
-        //
-        Path openJdkZipPath = workdir.resolve(openJdkZipName);
-
-        // Download it if it's not already downloaded
-        if (Files.notExists(openJdkZipPath)) {
-            Log.info(String.format("Downloading JDK %s source code from %s to %s", languageLevelName, downloadUrl, openJdkZipPath));
-            download(new URL(downloadUrl), openJdkZipPath);
-        }
-
-        // Do the bulk test
-        bulkTest(
-                new SourceZip(openJdkZipPath),
-                "openjdk_"+ languageLevelName +"_" + "src" + "_repo_test_results.txt",
-                new ParserConfiguration().setLanguageLevel(languageLevel)
-        );
+        setupAndDoBulkTest(languageLevel, lookup, languageLevelName, type);
     }
 
     @BeforeEach
