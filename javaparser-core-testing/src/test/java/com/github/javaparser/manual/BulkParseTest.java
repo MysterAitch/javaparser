@@ -281,15 +281,15 @@ class BulkParseTest {
     private void writeResults(TreeMap<Path, List<Problem>> results, String testResultsFileName) throws IOException {
         Log.info("Writing results...");
 
-        Path testResults = mavenModuleRoot(BulkParseTest.class)
+        Path testResultsDirectory = mavenModuleRoot(BulkParseTest.class)
                 .resolve(Paths.get("..", "javaparser-core-testing", "src", "test", "resources", "com", "github", "javaparser", "bulk_test_results"))
                 .normalize();
+        testResultsDirectory.toFile().mkdirs();
 
-        testResults.toFile().mkdirs();
-        testResults = testResults.resolve(testResultsFileName);
+        Path testResultsFile = testResultsDirectory.resolve(testResultsFileName);
 
         int problemTotal = 0;
-        try (BufferedWriter writer = Files.newBufferedWriter(testResults)) {
+        try (BufferedWriter writer = Files.newBufferedWriter(testResultsFile)) {
             for (Map.Entry<Path, List<Problem>> file : results.entrySet()) {
                 writer.write(file.getKey().toString().replace("\\", "/"));
                 writer.newLine();
@@ -303,7 +303,6 @@ class BulkParseTest {
             writer.write(f("%s problems in %s files", problemTotal, results.size()));
         }
 
-        Path finalTestResults = testResults;
-        Log.info("Results are in %s", () -> finalTestResults);
+        Log.info("Results are in %s", () -> testResultsFile);
     }
 }
