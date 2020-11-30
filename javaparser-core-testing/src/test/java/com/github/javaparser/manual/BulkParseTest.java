@@ -70,8 +70,24 @@ class BulkParseTest {
         downloadUrls_langTools.put(JAVA_10, "http://hg.openjdk.java.net/jdk10/jdk10/langtools/archive/19293ea3999f.zip"); // 11.9 MiB
 
         // The full java source directory -- approximately 160 MiB
-        downloadUrls_jdk.put(JAVA_8, "http://hg.openjdk.java.net/jdk8/jdk8/jdk/archive/687fd7c7986d.zip"); // 163 MiB
-        downloadUrls_jdk.put(JAVA_15, "http://hg.openjdk.java.net/jdk-updates/jdk15u/archive/ac639af55573.zip"); // 163 MiB
+//        downloadUrls_jdk.put(JAVA_8, "http://hg.openjdk.java.net/jdk8/jdk8/jdk/archive/687fd7c7986d.zip"); // 163 MiB
+//        downloadUrls_jdk.put(JAVA_9, "");
+//        downloadUrls_jdk.put(JAVA_10, "");
+//        downloadUrls_jdk.put(JAVA_11, "");
+//        downloadUrls_jdk.put(JAVA_12, "");
+//        downloadUrls_jdk.put(JAVA_13, "http://hg.openjdk.java.net/jdk-updates/jdk13u/archive/158d79992f86.zip");
+//        downloadUrls_jdk.put(JAVA_14, "http://hg.openjdk.java.net/jdk-updates/jdk14u/archive/680a974138a1.zip");
+//        downloadUrls_jdk.put(JAVA_15, "http://hg.openjdk.java.net/jdk-updates/jdk15u/archive/ac639af55573.zip"); // 163 MiB
+        downloadUrls_jdk.put(JAVA_6, "http://hg.openjdk.java.net/jdk6/jdk6/archive/tip.zip");
+        downloadUrls_jdk.put(JAVA_7, "http://hg.openjdk.java.net/jdk7/jdk7/archive/tip.zip");
+        downloadUrls_jdk.put(JAVA_8, "http://hg.openjdk.java.net/jdk8/jdk8/archive/tip.zip");
+        downloadUrls_jdk.put(JAVA_9, "http://hg.openjdk.java.net/jdk9/jdk9/archive/tip.zip");
+        downloadUrls_jdk.put(JAVA_10, "http://hg.openjdk.java.net/jdk-updates/jdk10u/archive/tip.zip");
+        downloadUrls_jdk.put(JAVA_11, "http://hg.openjdk.java.net/jdk-updates/jdk11u/archive/tip.zip");
+        downloadUrls_jdk.put(JAVA_12, "http://hg.openjdk.java.net/jdk-updates/jdk12u/archive/tip.zip");
+        downloadUrls_jdk.put(JAVA_13, "http://hg.openjdk.java.net/jdk-updates/jdk13u/archive/tip.zip");
+        downloadUrls_jdk.put(JAVA_14, "http://hg.openjdk.java.net/jdk-updates/jdk14u/archive/tip.zip");
+        downloadUrls_jdk.put(JAVA_15, "http://hg.openjdk.java.net/jdk-updates/jdk15u/archive/tip.zip");
     }
 
 
@@ -84,6 +100,7 @@ class BulkParseTest {
 
         downloadUrls_langTools.forEach((languageLevel, url) -> {
             try {
+                // This contains all kinds of test cases so it will lead to a lot of errors:
                 new BulkParseTest().parseOpenJdkLangToolsRepository(languageLevel);
             } catch (IOException e) {
                 e.printStackTrace();
