@@ -71,4 +71,4 @@ jobs:
         run: mvn -e install -DskipTests -Darguments=-DskipTests
 
       - name: Run bulk tests that do downloading
-        run: mvn -e -pl javaparser-core-testing test -Dtest=BulkParseTest*
+        run: mvn -e -pl javaparser-core-testing test -Dtest=BulkParseTest* -P AlsoSlowTests

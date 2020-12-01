@@ -130,81 +130,70 @@ class BulkParseTest {
      * Note that there is a lot of duplication (e.g. tip/snapshot will typically resolve to the same version),
      * but this is okay.
      */
-//    @Nested
-//    class BulkDownloadAndTest {
-//        @Nested
-//        class LangTools {
 
-            @ParameterizedTest
-            @EnumSource(ParserConfiguration.LanguageLevel.class)
-            public void langToolsSnapshot(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
-                TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_langTools_snapshot, "langtools", "snapshot");
+    @ParameterizedTest
+    @EnumSource(ParserConfiguration.LanguageLevel.class)
+    public void langToolsSnapshot(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
+        TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_langTools_snapshot, "langtools", "snapshot");
 
 //                // Problems are expected -- the langtools are used to test java constructs.
 //                results.forEach((path, problems) -> {
 //                    assertEquals(0, problems.size(), "Expected....");
 //                });
-            }
+    }
 
-            @ParameterizedTest
-            @EnumSource(ParserConfiguration.LanguageLevel.class)
-            public void langToolsTip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
-                TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_langTools_tip, "langtools", "tip");
+    @ParameterizedTest
+    @EnumSource(ParserConfiguration.LanguageLevel.class)
+    public void langToolsTip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
+        TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_langTools_tip, "langtools", "tip");
 
 //                // Problems are expected -- the langtools are used to test java constructs.
 //                results.forEach((path, problems) -> {
 //                    assertEquals(0, problems.size(), "Expected....");
 //                });
-            }
-//        }
+    }
 
-//        @Nested
-//        class Jdk {
+    @ParameterizedTest
+    @EnumSource(ParserConfiguration.LanguageLevel.class)
+    public void jdkSnapshot(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
+        TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_jdk_snapshot, "openjdk", "snapshot");
 
-            @ParameterizedTest
-            @EnumSource(ParserConfiguration.LanguageLevel.class)
-            public void jdkSnapshot(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
-                TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_jdk_snapshot, "openjdk", "snapshot");
-
-                if (languageLevel == JAVA_6 || languageLevel == JAVA_7 || languageLevel == JAVA_8 || languageLevel == JAVA_9) {
-                    results.forEach((path, problems) -> {
-                        assertEquals(0, problems.size(), "Expected zero errors.");
+        if (languageLevel == JAVA_6 || languageLevel == JAVA_7 || languageLevel == JAVA_8 || languageLevel == JAVA_9) {
+            results.forEach((path, problems) -> {
+                assertEquals(0, problems.size(), "Expected zero errors.");
+            });
+        } else {
+            results.entrySet()
+                    .stream()
+                    .filter(pathListEntry -> {
+                        return !(pathListEntry.getKey().subpath(1, 2).toString().equals("test"));
+                    })
+                    .forEach(pathListEntry -> {
+                        assertEquals(0, pathListEntry.getValue().size(), "Expected zero errors for files outside the test directory.");
                     });
-                } else {
-                    results.entrySet()
-                            .stream()
-                            .filter(pathListEntry -> {
-                                return !(pathListEntry.getKey().subpath(1, 2).toString().equals("test"));
-                            })
-                            .forEach(pathListEntry -> {
-                                assertEquals(0, pathListEntry.getValue().size(), "Expected zero errors for files outside the test directory.");
-                            });
-                }
-            }
+        }
+    }
 
-            @ParameterizedTest
-            @EnumSource(ParserConfiguration.LanguageLevel.class)
-            public void jdkTip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
-                TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_jdk_tip, "openjdk", "tip");
+    @ParameterizedTest
+    @EnumSource(ParserConfiguration.LanguageLevel.class)
+    public void jdkTip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
+        TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_jdk_tip, "openjdk", "tip");
 
-                if (languageLevel == JAVA_6 || languageLevel == JAVA_7 || languageLevel == JAVA_8 || languageLevel == JAVA_9) {
-                    results.forEach((path, problems) -> {
-                        assertEquals(0, problems.size(), "Expected zero errors.");
+        if (languageLevel == JAVA_6 || languageLevel == JAVA_7 || languageLevel == JAVA_8 || languageLevel == JAVA_9) {
+            results.forEach((path, problems) -> {
+                assertEquals(0, problems.size(), "Expected zero errors.");
+            });
+        } else {
+            results.entrySet()
+                    .stream()
+                    .filter(pathListEntry -> {
+                        return !(pathListEntry.getKey().subpath(1, 2).toString().equals("test"));
+                    })
+                    .forEach(pathListEntry -> {
+                        assertEquals(0, pathListEntry.getValue().size(), "Expected zero errors for files outside the test directory.");
                     });
-                } else {
-                    results.entrySet()
-                            .stream()
-                            .filter(pathListEntry -> {
-                                return !(pathListEntry.getKey().subpath(1, 2).toString().equals("test"));
-                            })
-                            .forEach(pathListEntry -> {
-                                assertEquals(0, pathListEntry.getValue().size(), "Expected zero errors for files outside the test directory.");
-                            });
-                }
-            }
-//        }
-//    }
-
+        }
+    }
 
     private TreeMap<Path, List<Problem>> doTest(ParserConfiguration.LanguageLevel languageLevel, Map<ParserConfiguration.LanguageLevel, String> urls, String type, String s) throws IOException {
         //
