@@ -143,7 +143,6 @@ class BulkParseTest {
 //                });
     }
 
-    @Disabled("disabled to remove redundancy - test can be reenabled or run manually if desired")
     @ParameterizedTest
     @EnumSource(ParserConfiguration.LanguageLevel.class)
     public void langToolsTip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
@@ -155,7 +154,6 @@ class BulkParseTest {
 //                });
     }
 
-    @Disabled("disabled to allow the github action to run within a reasonable timeframe - TODO: reenable")
     @ParameterizedTest
     @EnumSource(ParserConfiguration.LanguageLevel.class)
     public void jdkSnapshot(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
@@ -177,7 +175,6 @@ class BulkParseTest {
 //        }
     }
 
-    @Disabled("disabled to remove redundancy - test can be reenabled or run manually if desired")
     @ParameterizedTest
     @EnumSource(ParserConfiguration.LanguageLevel.class)
     public void jdkTip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
