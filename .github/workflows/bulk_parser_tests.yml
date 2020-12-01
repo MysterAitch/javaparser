@@ -73,6 +73,12 @@ jobs:
       - name: Run bulk tests that do downloading
         run: mvn -e -pl javaparser-core-testing test -Dtest=BulkParseTest* -P AlsoDownloadTests
 
+      - name: ls /var/tmp/javaparser_bulkparsetest
+        run: ls /var/tmp/javaparser_bulkparsetest
+
+      - name: ls /tmp/javaparser_bulkparsetest
+        run: ls /tmp/javaparser_bulkparsetest
+
       - name: git diff
         run: git diff
 
