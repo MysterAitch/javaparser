@@ -241,11 +241,12 @@ class BulkParseTest {
         assumeTrue(zipPath.toFile().exists(), "Cannot perform test unless the downloaded zip file exists.");
 
         // Do the bulk test
-        TreeMap<Path, List<Problem>> results = bulkTest(
-                new SourceZip(zipPath),
-                "openjdk_" + languageLevelName + "_" + type + "_" + replace + "_repo_test_results.txt",
-                new ParserConfiguration().setLanguageLevel(languageLevel)
-        );
+        TreeMap<Path, List<Problem>> results = new TreeMap<>();
+//        results = bulkTest(
+//                new SourceZip(zipPath),
+//                "openjdk_" + languageLevelName + "_" + type + "_" + replace + "_repo_test_results.txt",
+//                new ParserConfiguration().setLanguageLevel(languageLevel)
+//        );
 
         return results;
     }
