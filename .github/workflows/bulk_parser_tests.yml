@@ -8,9 +8,8 @@ on:
 
   ## Manually triggered
   workflow_dispatch:
-  
+
   ## On Push and Pull Request (trial, just during the PR.. to be removed..)
-  push:
   pull_request:
 
 jobs:
