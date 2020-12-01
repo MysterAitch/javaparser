@@ -1,14 +1,13 @@
 on:
 
-  ## Manually triggered
-  workflow_dispatch
-
   ## Daily
   schedule:
     # * is a special character in YAML so you have to quote this string
     # Run once per day
     - cron:  '0 2 * * *'
 
+  ## Manually triggered
+  workflow_dispatch:
 
 jobs:
   maven_test:
@@ -17,6 +16,8 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         jdk: [8]
+
+    runs-on: ${{ matrix.os }}
 
     steps:
       ## Checkout the current version of the code from the repo.
