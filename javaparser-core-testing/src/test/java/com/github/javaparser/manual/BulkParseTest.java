@@ -167,10 +167,19 @@ class BulkParseTest {
             public void jdkSnapshot(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
                 TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_jdk_snapshot, type, "snapshot");
 
-                if(languageLevel == JAVA_6 || languageLevel == JAVA_7 || languageLevel == JAVA_8 || languageLevel == JAVA_9) {
+                if (languageLevel == JAVA_6 || languageLevel == JAVA_7 || languageLevel == JAVA_8 || languageLevel == JAVA_9) {
                     results.forEach((path, problems) -> {
                         assertEquals(0, problems.size(), "Expected zero errors.");
                     });
+                } else {
+                    results.entrySet()
+                            .stream()
+                            .filter(pathListEntry -> {
+                                return !(pathListEntry.getKey().subpath(1, 2).toString().equals("test"));
+                            })
+                            .forEach(pathListEntry -> {
+                                assertEquals(0, pathListEntry.getValue().size(), "Expected zero errors for files outside the test directory.");
+                            });
                 }
             }
 
@@ -183,6 +192,15 @@ class BulkParseTest {
                     results.forEach((path, problems) -> {
                         assertEquals(0, problems.size(), "Expected zero errors.");
                     });
+                } else {
+                    results.entrySet()
+                            .stream()
+                            .filter(pathListEntry -> {
+                                return !(pathListEntry.getKey().subpath(1, 2).toString().equals("test"));
+                            })
+                            .forEach(pathListEntry -> {
+                                assertEquals(0, pathListEntry.getValue().size(), "Expected zero errors for files outside the test directory.");
+                            });
                 }
             }
         }
