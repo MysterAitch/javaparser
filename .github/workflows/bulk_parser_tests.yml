@@ -58,7 +58,7 @@ jobs:
 #        run: ./run_bulk_tests.sh
 
       - name: Install JavaParser
-        run: mvn -e install -Darguments=-DskipTests
+        run: mvn -e install -DskipTests -Darguments=-DskipTests
 
       - name: Run bulk tests that do downloading
         run: mvn -e -pl javaparser-core-testing test -Dtest=BulkParseTest*
