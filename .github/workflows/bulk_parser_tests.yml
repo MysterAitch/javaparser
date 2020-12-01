@@ -55,8 +55,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: /tmp/javaparser_bulkparsetest
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-javaparser_bulkparsetest-tmp
+          key: ${{ runner.os }}-tmp-javaparser_bulkparsetest-${{ hashFiles('javaparser_bulkparsetest/*.zip') }}
+          restore-keys: ${{ runner.os }}-tmp-javaparser_bulkparsetest
 
       - name: ls /tmp/javaparser_bulkparsetest
         run: ls /tmp/javaparser_bulkparsetest
