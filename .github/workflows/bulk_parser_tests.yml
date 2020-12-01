@@ -37,6 +37,9 @@ jobs:
       - name: Echo exact java version being used
         run: java -version
 
+      - name: Echo exact maven version being used
+        run: mvn --version
+
       ## Use a cache to reduce the build/test times (avoids having to download dependencies on EVERY run).
       ### https://help.github.com/en/actions/language-and-framework-guides/building-and-testing-java-with-maven#caching-dependencies
       - name: Cache Maven packages
@@ -46,12 +49,19 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Cache test zips
+      - name: Cache test zips (/var/tmp)
+        uses: actions/cache@v2
+        with:
+          path: /var/tmp/javaparser_bulkparsetest
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-javaparser_bulkparsetest-var-tmp
+
+      - name: Cache test zips (/var)
         uses: actions/cache@v2
         with:
           path: /tmp/javaparser_bulkparsetest
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-javaparser_bulkparsetest
+          restore-keys: ${{ runner.os }}-javaparser_bulkparsetest-tmp
 
 
 #      - name: Test with Maven (incl. slow tests)
