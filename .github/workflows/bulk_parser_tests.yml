@@ -66,9 +66,6 @@ jobs:
       - name: ls /tmp/javaparser_bulkparsetest
         run: ls /tmp/javaparser_bulkparsetest
 
-      - name: ls /var/tmp/javaparser_bulkparsetest
-        run: ls /var/tmp/javaparser_bulkparsetest
-
 #      - name: Test with Maven (incl. slow tests)
 #        run: ./run_bulk_tests.sh
 
@@ -80,9 +77,6 @@ jobs:
 
       - name: ls /tmp/javaparser_bulkparsetest
         run: ls /tmp/javaparser_bulkparsetest
-
-      - name: ls /var/tmp/javaparser_bulkparsetest
-        run: ls /var/tmp/javaparser_bulkparsetest
 
       - name: git diff
         run: git diff
