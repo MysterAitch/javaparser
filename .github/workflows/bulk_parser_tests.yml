@@ -72,6 +72,8 @@ jobs:
 
       - name: Run bulk tests that do downloading
         run: mvn -e -pl javaparser-core-testing test -Dtest=BulkParseTest* -P AlsoDownloadTests
+        env:
+          MAVEN_OPTS: -Xss128M
 
       - name: Output a git diff
         run: git diff
