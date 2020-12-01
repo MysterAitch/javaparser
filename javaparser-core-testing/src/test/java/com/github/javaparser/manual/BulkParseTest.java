@@ -23,6 +23,7 @@ package com.github.javaparser.manual;
 
 import com.github.javaparser.ParserConfiguration;
 import com.github.javaparser.Problem;
+import com.github.javaparser.SlowTest;
 import com.github.javaparser.utils.Log;
 import com.github.javaparser.utils.SourceRoot;
 import com.github.javaparser.utils.SourceZip;
@@ -129,6 +130,7 @@ class BulkParseTest {
      * Note that there is a lot of duplication (e.g. tip/snapshot will typically resolve to the same version),
      * but this is okay.
      */
+    @SlowTest
     @Nested
     class BulkDownloadAndTest {
         @Nested
