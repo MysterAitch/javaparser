@@ -58,6 +58,9 @@ jobs:
           key: ${{ runner.os }}-tmp-javaparser_bulkparsetest-${{ hashFiles('javaparser_bulkparsetest/*.zip') }}
           restore-keys: ${{ runner.os }}-tmp-javaparser_bulkparsetest
 
+      - name: mkdir -p /tmp/javaparser_bulkparsetest
+        run: mkdir -p /tmp/javaparser_bulkparsetest
+
       - name: ls /tmp/javaparser_bulkparsetest
         run: ls /tmp/javaparser_bulkparsetest
 
