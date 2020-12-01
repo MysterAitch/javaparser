@@ -5,6 +5,8 @@ on:
     # * is a special character in YAML so you have to quote this string
     # Run once per day
     - cron:  '0 2 * * *'
+#    # Run once per week (on Tuesdays)
+#    - cron:  '0 2 * * 2'
 
   ## Manually triggered
   workflow_dispatch:
