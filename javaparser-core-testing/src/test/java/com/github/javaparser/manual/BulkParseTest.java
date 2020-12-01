@@ -29,7 +29,6 @@ import com.github.javaparser.utils.SourceRoot;
 import com.github.javaparser.utils.SourceZip;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -55,6 +54,7 @@ import static java.util.Comparator.comparing;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
+@SlowTest
 class BulkParseTest {
 
     private static final Map<ParserConfiguration.LanguageLevel, String> downloadUrls_langTools_snapshot = new HashMap<>();
@@ -130,17 +130,15 @@ class BulkParseTest {
      * Note that there is a lot of duplication (e.g. tip/snapshot will typically resolve to the same version),
      * but this is okay.
      */
-    @SlowTest
-    @Nested
-    class BulkDownloadAndTest {
-        @Nested
-        class LangTools {
-            private final String type = "langtools";
+//    @Nested
+//    class BulkDownloadAndTest {
+//        @Nested
+//        class LangTools {
 
             @ParameterizedTest
             @EnumSource(ParserConfiguration.LanguageLevel.class)
             public void langToolsSnapshot(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
-                TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_langTools_snapshot, type, "snapshot");
+                TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_langTools_snapshot, "langtools", "snapshot");
 
 //                // Problems are expected -- the langtools are used to test java constructs.
 //                results.forEach((path, problems) -> {
@@ -151,23 +149,22 @@ class BulkParseTest {
             @ParameterizedTest
             @EnumSource(ParserConfiguration.LanguageLevel.class)
             public void langToolsTip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
-                TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_langTools_tip, type, "tip");
+                TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_langTools_tip, "langtools", "tip");
 
 //                // Problems are expected -- the langtools are used to test java constructs.
 //                results.forEach((path, problems) -> {
 //                    assertEquals(0, problems.size(), "Expected....");
 //                });
             }
-        }
+//        }
 
-        @Nested
-        class Jdk {
-            private final String type = "openjdk";
+//        @Nested
+//        class Jdk {
 
             @ParameterizedTest
             @EnumSource(ParserConfiguration.LanguageLevel.class)
             public void jdkSnapshot(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
-                TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_jdk_snapshot, type, "snapshot");
+                TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_jdk_snapshot, "openjdk", "snapshot");
 
                 if (languageLevel == JAVA_6 || languageLevel == JAVA_7 || languageLevel == JAVA_8 || languageLevel == JAVA_9) {
                     results.forEach((path, problems) -> {
@@ -188,7 +185,7 @@ class BulkParseTest {
             @ParameterizedTest
             @EnumSource(ParserConfiguration.LanguageLevel.class)
             public void jdkTip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
-                TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_jdk_tip, type, "tip");
+                TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_jdk_tip, "openjdk", "tip");
 
                 if (languageLevel == JAVA_6 || languageLevel == JAVA_7 || languageLevel == JAVA_8 || languageLevel == JAVA_9) {
                     results.forEach((path, problems) -> {
@@ -205,8 +202,8 @@ class BulkParseTest {
                             });
                 }
             }
-        }
-    }
+//        }
+//    }
 
 
     private TreeMap<Path, List<Problem>> doTest(ParserConfiguration.LanguageLevel languageLevel, Map<ParserConfiguration.LanguageLevel, String> urls, String type, String s) throws IOException {
