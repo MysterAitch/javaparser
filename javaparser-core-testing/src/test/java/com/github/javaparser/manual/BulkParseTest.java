@@ -28,7 +28,10 @@ import com.github.javaparser.utils.SourceRoot;
 import com.github.javaparser.utils.SourceZip;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -49,6 +52,7 @@ import static com.github.javaparser.utils.SourceRoot.Callback.Result.DONT_SAVE;
 import static com.github.javaparser.utils.TestUtils.download;
 import static com.github.javaparser.utils.TestUtils.temporaryDirectory;
 import static java.util.Comparator.comparing;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 class BulkParseTest {
 
@@ -107,6 +111,19 @@ class BulkParseTest {
     }
 
 
+
+
+    @BeforeEach
+    void startLogging() {
+        Log.setAdapter(new Log.StandardOutStandardErrorAdapter());
+    }
+
+    @AfterEach
+    void stopLogging() {
+        Log.setAdapter(new Log.SilentAdapter());
+    }
+
+
     /**
      * Running this will download a version of the OpenJDK / lang tools, unzip it, and parse it.
      * If it throws a stack overflow exception, increase the JVM's stack size -- e.g. using -Xss32M
@@ -114,49 +131,89 @@ class BulkParseTest {
      * Note that there is a lot of duplication (e.g. tip/snapshot will typically resolve to the same version),
      * but this is okay.
      */
-    public static void main(String[] args) {
-        Log.setAdapter(new Log.StandardOutStandardErrorAdapter());
+    @Nested
+    class BulkDownloadAndTest {
 
-        downloadUrls_langTools_snapshot.forEach((languageLevel, url) -> {
-            try {
-                Log.info("bulk testing %s - lang tools, snapshot", () -> languageLevel);
+        @ParameterizedTest
+        @EnumSource(ParserConfiguration.LanguageLevel.class)
+        public void assertLangToolsSnapshotsDownloaded (ParserConfiguration.LanguageLevel languageLevel) {
+            assumeTrue(BulkParseTest.downloadUrls_langTools_snapshot.containsKey(languageLevel));
+
+            String downloadUrl = BulkParseTest.downloadUrls_langTools_snapshot.get(languageLevel);
+        }
+
+
+        @Nested
+        class LangTools {
+            private final String type = "langtools";
+
+            @ParameterizedTest
+            @EnumSource(ParserConfiguration.LanguageLevel.class)
+            public void langToolsSnapshot(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
+                Map<ParserConfiguration.LanguageLevel, String> urls = BulkParseTest.downloadUrls_langTools_snapshot;
+                String s = "snapshot";
+
+                //
+                String message = String.format("bulk testing %s - %s, %s", languageLevel, type, s);
+                assumeTrue(urls.containsKey(languageLevel), message + " -- SKIPPED, no download url");
+                Log.info(message);
+
                 // This contains all kinds of test cases so it will lead to a lot of errors:
-                new BulkParseTest().parseOpenJdkLangToolsRepository(languageLevel, downloadUrls_langTools_snapshot);
-            } catch (IOException e) {
-                e.printStackTrace();
+                new BulkParseTest().testZip(languageLevel, urls, type);
             }
-        });
 
-        downloadUrls_langTools_tip.forEach((languageLevel, url) -> {
-            try {
-                Log.info("bulk testing %s - lang tools, tip", () -> languageLevel);
+            @ParameterizedTest
+            @EnumSource(ParserConfiguration.LanguageLevel.class)
+            public void langToolsTip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
+                Map<ParserConfiguration.LanguageLevel, String> urls = BulkParseTest.downloadUrls_langTools_tip;
+                String s = "tip";
+
+                //
+                String message = String.format("bulk testing %s - %s, %s", languageLevel, type, s);
+                assumeTrue(urls.containsKey(languageLevel), message + " -- SKIPPED, no download url");
+                Log.info(message);
+
                 // This contains all kinds of test cases so it will lead to a lot of errors:
-                new BulkParseTest().parseOpenJdkLangToolsRepository(languageLevel, downloadUrls_langTools_tip);
-            } catch (IOException e) {
-                e.printStackTrace();
+                new BulkParseTest().testZip(languageLevel, urls, type);
             }
-        });
 
-        downloadUrls_jdk_snapshot.forEach((languageLevel, url) -> {
-            try {
-                Log.info("bulk testing %s - jdk, snapshot", () -> languageLevel);
-                // This contains the JDK source code, so it should have zero errors:
-                new BulkParseTest().parseJdkSrcZip(languageLevel, downloadUrls_jdk_snapshot);
-            } catch (IOException e) {
-                e.printStackTrace();
+
+
+        }
+        @Nested
+        class Jdk {
+            private final String type = "openjdk";
+
+            @ParameterizedTest
+            @EnumSource(ParserConfiguration.LanguageLevel.class)
+            public void jdkSnapshot(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
+                Map<ParserConfiguration.LanguageLevel, String> urls = BulkParseTest.downloadUrls_jdk_snapshot;
+                String s = "snapshot";
+
+                //
+                String message = String.format("bulk testing %s - %s, %s", languageLevel, type, s);
+                assumeTrue(urls.containsKey(languageLevel), message + " -- SKIPPED, no download url");
+                Log.info(message);
+
+                // This contains all kinds of test cases so it will lead to a lot of errors:
+                new BulkParseTest().testZip(languageLevel, urls, type);
             }
-        });
 
-        downloadUrls_jdk_tip.forEach((languageLevel, url) -> {
-            try {
-                Log.info("bulk testing %s - jdk, tip", () -> languageLevel);
-                // This contains the JDK source code, so it should have zero errors:
-                new BulkParseTest().parseJdkSrcZip(languageLevel, downloadUrls_jdk_tip);
-            } catch (IOException e) {
-                e.printStackTrace();
+            @ParameterizedTest
+            @EnumSource(ParserConfiguration.LanguageLevel.class)
+            public void jdkTip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
+                Map<ParserConfiguration.LanguageLevel, String> urls = BulkParseTest.downloadUrls_jdk_tip;
+                String s = "tip";
+
+                //
+                String message = String.format("bulk testing %s - %s, %s", languageLevel, type, s);
+                assumeTrue(urls.containsKey(languageLevel), message + " -- SKIPPED, no download url");
+                Log.info(message);
+
+                // This contains all kinds of test cases so it will lead to a lot of errors:
+                new BulkParseTest().testZip(languageLevel, urls, type);
             }
-        });
-
+        }
     }
 
     private void setupAndDoBulkTest(ParserConfiguration.LanguageLevel languageLevel, String languageLevelName, String type, String downloadUrl) throws IOException {
@@ -178,7 +235,13 @@ class BulkParseTest {
 
         // Download it if it's not already downloaded
         if (Files.notExists(zipPath)) {
-            Log.info(String.format("Downloading JDK %s " + type + " from %s to %s", languageLevelName, downloadUrl, zipPath.toString()));
+            Log.info(String.format(
+                    "Downloading JDK %s %s from %s to %s",
+                    languageLevelName,
+                    type,
+                    downloadUrl,
+                    zipPath.toString()
+            ));
             download(new URL(downloadUrl), zipPath);
         }
 
@@ -191,25 +254,7 @@ class BulkParseTest {
     }
 
 
-    private void parseOpenJdkLangToolsRepository(ParserConfiguration.LanguageLevel languageLevel, Map<ParserConfiguration.LanguageLevel, String> lookup) throws IOException {
-        // Config
-        String type = "langtools";
-
-        //
-        String downloadUrl = lookup.get(languageLevel);
-        String languageLevelName = languageLevel.name();
-
-        //
-        if(downloadUrl == null) {
-            Log.error("Download URL for "+ type + " " + languageLevel + " not specified.");
-        } else {
-            setupAndDoBulkTest(languageLevel, languageLevelName, type, downloadUrl);
-        }
-    }
-
-    private void parseJdkSrcZip(ParserConfiguration.LanguageLevel languageLevel, Map<ParserConfiguration.LanguageLevel, String> lookup) throws IOException {
-        // Config
-        String type = "openjdk";
+    private void testZip(ParserConfiguration.LanguageLevel languageLevel, Map<ParserConfiguration.LanguageLevel, String> lookup, String type) throws IOException {
 
         //
         String downloadUrl = lookup.get(languageLevel);
@@ -221,16 +266,6 @@ class BulkParseTest {
         } else {
             setupAndDoBulkTest(languageLevel, languageLevelName, type, downloadUrl);
         }
-    }
-
-    @BeforeEach
-    void startLogging() {
-        Log.setAdapter(new Log.StandardOutStandardErrorAdapter());
-    }
-
-    @AfterEach
-    void stopLogging() {
-        Log.setAdapter(new Log.SilentAdapter());
     }
 
     @Test
