@@ -23,7 +23,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     env:
-      MAVEN_OPTS: -Xss128M
+      MAVEN_OPTS: "-Xss128M"
 
     steps:
       ## Checkout the current version of the code from the repo.
