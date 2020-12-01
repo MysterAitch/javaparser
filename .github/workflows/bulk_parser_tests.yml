@@ -49,14 +49,7 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Cache test zips (/var/tmp)
-        uses: actions/cache@v2
-        with:
-          path: /var/tmp/javaparser_bulkparsetest
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-javaparser_bulkparsetest-var-tmp
-
-      - name: Cache test zips (/var)
+      - name: Cache test zips (/tmp/javaparser_bulkparsetest)
         uses: actions/cache@v2
         with:
           path: /tmp/javaparser_bulkparsetest
