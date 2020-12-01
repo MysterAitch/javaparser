@@ -29,6 +29,7 @@ import com.github.javaparser.utils.SourceRoot;
 import com.github.javaparser.utils.SourceZip;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -142,6 +143,7 @@ class BulkParseTest {
 //                });
     }
 
+    @Disabled("disabled to remove redundancy - test can be reenabled or run manually if desired")
     @ParameterizedTest
     @EnumSource(ParserConfiguration.LanguageLevel.class)
     public void langToolsTip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
@@ -153,6 +155,7 @@ class BulkParseTest {
 //                });
     }
 
+    @Disabled("disabled to allow the github action to run within a reasonable timeframe - TODO: reenable")
     @ParameterizedTest
     @EnumSource(ParserConfiguration.LanguageLevel.class)
     public void jdkSnapshot(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
@@ -174,6 +177,7 @@ class BulkParseTest {
 //        }
     }
 
+    @Disabled("disabled to remove redundancy - test can be reenabled or run manually if desired")
     @ParameterizedTest
     @EnumSource(ParserConfiguration.LanguageLevel.class)
     public void jdkTip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
