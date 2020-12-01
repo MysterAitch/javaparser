@@ -111,8 +111,6 @@ class BulkParseTest {
     }
 
 
-
-
     @BeforeEach
     void startLogging() {
         Log.setAdapter(new Log.StandardOutStandardErrorAdapter());
@@ -127,22 +125,12 @@ class BulkParseTest {
     /**
      * Running this will download a version of the OpenJDK / lang tools, unzip it, and parse it.
      * If it throws a stack overflow exception, increase the JVM's stack size -- e.g. using -Xss32M
-     *
+     * <p>
      * Note that there is a lot of duplication (e.g. tip/snapshot will typically resolve to the same version),
      * but this is okay.
      */
     @Nested
     class BulkDownloadAndTest {
-
-        @ParameterizedTest
-        @EnumSource(ParserConfiguration.LanguageLevel.class)
-        public void assertLangToolsSnapshotsDownloaded (ParserConfiguration.LanguageLevel languageLevel) {
-            assumeTrue(BulkParseTest.downloadUrls_langTools_snapshot.containsKey(languageLevel));
-
-            String downloadUrl = BulkParseTest.downloadUrls_langTools_snapshot.get(languageLevel);
-        }
-
-
         @Nested
         class LangTools {
             private final String type = "langtools";
@@ -150,36 +138,16 @@ class BulkParseTest {
             @ParameterizedTest
             @EnumSource(ParserConfiguration.LanguageLevel.class)
             public void langToolsSnapshot(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
-                Map<ParserConfiguration.LanguageLevel, String> urls = BulkParseTest.downloadUrls_langTools_snapshot;
-                String s = "snapshot";
-
-                //
-                String message = String.format("bulk testing %s - %s, %s", languageLevel, type, s);
-                assumeTrue(urls.containsKey(languageLevel), message + " -- SKIPPED, no download url");
-                Log.info(message);
-
-                // This contains all kinds of test cases so it will lead to a lot of errors:
-                new BulkParseTest().testZip(languageLevel, urls, type);
+                doTest(languageLevel, BulkParseTest.downloadUrls_langTools_snapshot, type, "snapshot");
             }
 
             @ParameterizedTest
             @EnumSource(ParserConfiguration.LanguageLevel.class)
             public void langToolsTip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
-                Map<ParserConfiguration.LanguageLevel, String> urls = BulkParseTest.downloadUrls_langTools_tip;
-                String s = "tip";
-
-                //
-                String message = String.format("bulk testing %s - %s, %s", languageLevel, type, s);
-                assumeTrue(urls.containsKey(languageLevel), message + " -- SKIPPED, no download url");
-                Log.info(message);
-
-                // This contains all kinds of test cases so it will lead to a lot of errors:
-                new BulkParseTest().testZip(languageLevel, urls, type);
+                doTest(languageLevel, BulkParseTest.downloadUrls_langTools_tip, type, "tip");
             }
-
-
-
         }
+
         @Nested
         class Jdk {
             private final String type = "openjdk";
@@ -187,37 +155,32 @@ class BulkParseTest {
             @ParameterizedTest
             @EnumSource(ParserConfiguration.LanguageLevel.class)
             public void jdkSnapshot(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
-                Map<ParserConfiguration.LanguageLevel, String> urls = BulkParseTest.downloadUrls_jdk_snapshot;
-                String s = "snapshot";
-
-                //
-                String message = String.format("bulk testing %s - %s, %s", languageLevel, type, s);
-                assumeTrue(urls.containsKey(languageLevel), message + " -- SKIPPED, no download url");
-                Log.info(message);
-
-                // This contains all kinds of test cases so it will lead to a lot of errors:
-                new BulkParseTest().testZip(languageLevel, urls, type);
+                doTest(languageLevel, BulkParseTest.downloadUrls_jdk_snapshot, type, "snapshot");
             }
 
             @ParameterizedTest
             @EnumSource(ParserConfiguration.LanguageLevel.class)
             public void jdkTip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
-                Map<ParserConfiguration.LanguageLevel, String> urls = BulkParseTest.downloadUrls_jdk_tip;
-                String s = "tip";
-
-                //
-                String message = String.format("bulk testing %s - %s, %s", languageLevel, type, s);
-                assumeTrue(urls.containsKey(languageLevel), message + " -- SKIPPED, no download url");
-                Log.info(message);
-
-                // This contains all kinds of test cases so it will lead to a lot of errors:
-                new BulkParseTest().testZip(languageLevel, urls, type);
+                doTest(languageLevel, BulkParseTest.downloadUrls_jdk_tip, type, "tip");
             }
         }
     }
 
-    private void setupAndDoBulkTest(ParserConfiguration.LanguageLevel languageLevel, String languageLevelName, String type, String downloadUrl) throws IOException {
-        Objects.requireNonNull(downloadUrl);
+
+    private void doTest(ParserConfiguration.LanguageLevel languageLevel, Map<ParserConfiguration.LanguageLevel, String> urls, String type, String s) throws IOException {
+        //
+        String message = String.format("bulk testing %s - %s, %s", languageLevel, type, s);
+        assumeTrue(urls.containsKey(languageLevel), message + " -- SKIPPED, no download url");
+
+        //
+        Log.info(message);
+        testZip(languageLevel, urls.get(languageLevel), type);
+    }
+
+
+    private void testZip(ParserConfiguration.LanguageLevel languageLevel, String downloadUrl, String type) throws IOException {
+        //
+        String languageLevelName = languageLevel.name();
 
         // Ensure that working directory is available.
         Path workdir = mavenModuleRoot(BulkParseTest.class)
@@ -230,7 +193,7 @@ class BulkParseTest {
         //
         String[] split = downloadUrl.split("/");
         String replace = split[split.length - 1].replace(".zip", "");
-        String zipName = type + "-" + languageLevelName  + "-" + replace  + ".zip";
+        String zipName = type + "-" + languageLevelName + "-" + replace + ".zip";
         Path zipPath = workdir.resolve(zipName);
 
         // Download it if it's not already downloaded
@@ -248,24 +211,9 @@ class BulkParseTest {
         // Do the bulk test
         bulkTest(
                 new SourceZip(zipPath),
-                "openjdk_"+ languageLevelName +"_" + type + "_" + replace + "_repo_test_results.txt",
+                "openjdk_" + languageLevelName + "_" + type + "_" + replace + "_repo_test_results.txt",
                 new ParserConfiguration().setLanguageLevel(languageLevel)
         );
-    }
-
-
-    private void testZip(ParserConfiguration.LanguageLevel languageLevel, Map<ParserConfiguration.LanguageLevel, String> lookup, String type) throws IOException {
-
-        //
-        String downloadUrl = lookup.get(languageLevel);
-        String languageLevelName = languageLevel.name();
-
-        //
-        if(downloadUrl == null) {
-            Log.error("Download URL for " + languageLevel + " not specified.");
-        } else {
-            setupAndDoBulkTest(languageLevel, languageLevelName, type, downloadUrl);
-        }
     }
 
     @Test
@@ -285,6 +233,7 @@ class BulkParseTest {
                     new ParserConfiguration().setLanguageLevel(BLEEDING_EDGE));
         }
     }
+
 
     public void bulkTest(SourceRoot sourceRoot, String testResultsFileName, ParserConfiguration configuration) throws IOException {
         sourceRoot.setParserConfiguration(configuration);
