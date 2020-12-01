@@ -6,6 +6,6 @@ set -x ## Enable logging of commands run
 mvn -e install -Darguments=-DskipTests
 
 ## Run just the bulk parse tests that do downloading
-mvn -e -pl javaparser-core-testing test -Dtest=BulkParseTest* -P AlsoSlowTests
+mvn -e -pl javaparser-core-testing test -Dtest=BulkParseTest* -P AlsoDownloadTests
 
 set +x ## Disable logging of commands run

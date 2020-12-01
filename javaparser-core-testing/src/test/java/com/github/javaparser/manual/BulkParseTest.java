@@ -23,7 +23,7 @@ package com.github.javaparser.manual;
 
 import com.github.javaparser.ParserConfiguration;
 import com.github.javaparser.Problem;
-import com.github.javaparser.SlowTest;
+import com.github.javaparser.DownloadTest;
 import com.github.javaparser.utils.Log;
 import com.github.javaparser.utils.SourceRoot;
 import com.github.javaparser.utils.SourceZip;
@@ -54,7 +54,7 @@ import static java.util.Comparator.comparing;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
-@SlowTest
+@DownloadTest
 class BulkParseTest {
 
     private static final Map<ParserConfiguration.LanguageLevel, String> downloadUrls_langTools_snapshot = new HashMap<>();

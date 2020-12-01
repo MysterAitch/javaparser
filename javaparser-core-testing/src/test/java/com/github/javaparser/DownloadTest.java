@@ -9,6 +9,6 @@ import java.lang.annotation.Target;
 
 @Target({ ElementType.TYPE, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
-@Tag("com.github.javaparser.SlowTest")
-public @interface SlowTest {
+@Tag("com.github.javaparser.DownloadTest")
+public @interface DownloadTest {
 }

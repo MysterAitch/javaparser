@@ -145,7 +145,7 @@
         </profile>
 
         <profile>
-            <id>NonSlowTests</id>
+            <id>NonDownloadTests</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
@@ -155,7 +155,7 @@
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <configuration>
-                            <excludedGroups>com.github.javaparser.SlowTest</excludedGroups>
+                            <excludedGroups>com.github.javaparser.DownloadTest</excludedGroups>
                             <parallel>methods</parallel>
                             <threadCount>4</threadCount>
                             <!-- Deliberately have an empty excludes, to enable nested classes to be executed - defaults to excluding nested classes -->
@@ -168,7 +168,7 @@
             </build>
         </profile>
         <profile>
-            <id>AlsoSlowTests</id>
+            <id>AlsoDownloadTests</id>
         </profile>
     </profiles>
 </project>
