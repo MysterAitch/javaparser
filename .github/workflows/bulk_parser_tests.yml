@@ -22,10 +22,6 @@ jobs:
 
     runs-on: ${{ matrix.os }}
 
-    env:
-      MAVEN_OPTS: "-Xss512M"
-      JAVA_OPTS: "-Xss512M"
-
     steps:
       ## Checkout the current version of the code from the repo.
       - name: Checkout latest code
@@ -76,6 +72,9 @@ jobs:
 
       - name: Run bulk tests that do downloading
         run: mvn -e -pl javaparser-core-testing test -Dtest=BulkParseTest* -P AlsoDownloadTests
+        env:
+          MAVEN_OPTS: "-Xss512M"
+          JAVA_OPTS: "-Xss512M"
 
       - name: Output a git diff
         run: git diff
