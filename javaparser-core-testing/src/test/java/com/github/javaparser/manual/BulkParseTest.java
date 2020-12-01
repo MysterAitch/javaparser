@@ -42,7 +42,6 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.TreeMap;
 
 import static com.github.javaparser.ParserConfiguration.LanguageLevel.*;
@@ -52,6 +51,7 @@ import static com.github.javaparser.utils.SourceRoot.Callback.Result.DONT_SAVE;
 import static com.github.javaparser.utils.TestUtils.download;
 import static com.github.javaparser.utils.TestUtils.temporaryDirectory;
 import static java.util.Comparator.comparing;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 class BulkParseTest {
@@ -138,13 +138,23 @@ class BulkParseTest {
             @ParameterizedTest
             @EnumSource(ParserConfiguration.LanguageLevel.class)
             public void langToolsSnapshot(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
-                doTest(languageLevel, BulkParseTest.downloadUrls_langTools_snapshot, type, "snapshot");
+                TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_langTools_snapshot, type, "snapshot");
+
+//                // Problems are expected -- the langtools are used to test java constructs.
+//                results.forEach((path, problems) -> {
+//                    assertEquals(0, problems.size(), "Expected....");
+//                });
             }
 
             @ParameterizedTest
             @EnumSource(ParserConfiguration.LanguageLevel.class)
             public void langToolsTip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
-                doTest(languageLevel, BulkParseTest.downloadUrls_langTools_tip, type, "tip");
+                TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_langTools_tip, type, "tip");
+
+//                // Problems are expected -- the langtools are used to test java constructs.
+//                results.forEach((path, problems) -> {
+//                    assertEquals(0, problems.size(), "Expected....");
+//                });
             }
         }
 
@@ -155,30 +165,43 @@ class BulkParseTest {
             @ParameterizedTest
             @EnumSource(ParserConfiguration.LanguageLevel.class)
             public void jdkSnapshot(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
-                doTest(languageLevel, BulkParseTest.downloadUrls_jdk_snapshot, type, "snapshot");
+                TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_jdk_snapshot, type, "snapshot");
+
+                if(languageLevel == JAVA_6 || languageLevel == JAVA_7 || languageLevel == JAVA_8 || languageLevel == JAVA_9) {
+                    results.forEach((path, problems) -> {
+                        assertEquals(0, problems.size(), "Expected zero errors.");
+                    });
+                }
             }
 
             @ParameterizedTest
             @EnumSource(ParserConfiguration.LanguageLevel.class)
             public void jdkTip(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
-                doTest(languageLevel, BulkParseTest.downloadUrls_jdk_tip, type, "tip");
+                TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_jdk_tip, type, "tip");
+
+                if (languageLevel == JAVA_6 || languageLevel == JAVA_7 || languageLevel == JAVA_8 || languageLevel == JAVA_9) {
+                    results.forEach((path, problems) -> {
+                        assertEquals(0, problems.size(), "Expected zero errors.");
+                    });
+                }
             }
         }
     }
 
 
-    private void doTest(ParserConfiguration.LanguageLevel languageLevel, Map<ParserConfiguration.LanguageLevel, String> urls, String type, String s) throws IOException {
+    private TreeMap<Path, List<Problem>> doTest(ParserConfiguration.LanguageLevel languageLevel, Map<ParserConfiguration.LanguageLevel, String> urls, String type, String s) throws IOException {
         //
         String message = String.format("bulk testing %s - %s, %s", languageLevel, type, s);
         assumeTrue(urls.containsKey(languageLevel), message + " -- SKIPPED, no download url");
 
         //
         Log.info(message);
-        testZip(languageLevel, urls.get(languageLevel), type);
+        TreeMap<Path, List<Problem>> results = testZip(languageLevel, urls.get(languageLevel), type);
+        return results;
     }
 
 
-    private void testZip(ParserConfiguration.LanguageLevel languageLevel, String downloadUrl, String type) throws IOException {
+    private TreeMap<Path, List<Problem>> testZip(ParserConfiguration.LanguageLevel languageLevel, String downloadUrl, String type) throws IOException {
         //
         String languageLevelName = languageLevel.name();
 
@@ -189,6 +212,7 @@ class BulkParseTest {
                         "javaparser_bulkparsetest"
                 ));
         workdir.toFile().mkdirs();
+        assumeTrue(workdir.toFile().exists(), "Cannot perform test unless the temporary download directory exists.");
 
         //
         String[] split = downloadUrl.split("/");
@@ -207,18 +231,21 @@ class BulkParseTest {
             ));
             download(new URL(downloadUrl), zipPath);
         }
+        assumeTrue(zipPath.toFile().exists(), "Cannot perform test unless the downloaded zip file exists.");
 
         // Do the bulk test
-        bulkTest(
+        TreeMap<Path, List<Problem>> results = bulkTest(
                 new SourceZip(zipPath),
                 "openjdk_" + languageLevelName + "_" + type + "_" + replace + "_repo_test_results.txt",
                 new ParserConfiguration().setLanguageLevel(languageLevel)
         );
+
+        return results;
     }
 
     @Test
     void parseOwnSourceCode() throws IOException {
-        String[] roots = new String[]{
+        final String[] roots = new String[]{
                 "javaparser-core/src/main/java",
                 "javaparser-core-testing/src/test/java",
                 "javaparser-core-generators/src/main/java",
@@ -226,16 +253,25 @@ class BulkParseTest {
                 "javaparser-symbol-solver-core/src/main/java",
                 "javaparser-symbol-solver-testing/src/test/java"
         };
+
         for (String root : roots) {
-            bulkTest(
+            TreeMap<Path, List<Problem>> result = bulkTest(
                     new SourceRoot(mavenModuleRoot(BulkParseTest.class).resolve("..").resolve(root)),
-                    "javaparser_test_results_" + root.replace("-", "_").replace("/", "_") + ".txt",
-                    new ParserConfiguration().setLanguageLevel(BLEEDING_EDGE));
+                    String.format(
+                            "javaparser_test_results_%s.txt",
+                            root.replace("-", "_").replace("/", "_")
+                    ),
+                    new ParserConfiguration().setLanguageLevel(BLEEDING_EDGE)
+            );
+
+            result.forEach((key, value) -> {
+                assertEquals(0, value.size(), "Expected zero errors when parsing JavaParser's own source code. ");
+            });
         }
     }
 
 
-    public void bulkTest(SourceRoot sourceRoot, String testResultsFileName, ParserConfiguration configuration) throws IOException {
+    public TreeMap<Path, List<Problem>> bulkTest(SourceRoot sourceRoot, String testResultsFileName, ParserConfiguration configuration) throws IOException {
         sourceRoot.setParserConfiguration(configuration);
         TreeMap<Path, List<Problem>> results = new TreeMap<>(comparing(o -> o.toString().toLowerCase()));
         sourceRoot.parseParallelized((localPath, absolutePath, result) -> {
@@ -246,10 +282,10 @@ class BulkParseTest {
             }
             return DONT_SAVE;
         });
-        writeResults(results, testResultsFileName);
+        return writeResults(results, testResultsFileName);
     }
 
-    public void bulkTest(SourceZip sourceRoot, String testResultsFileName, ParserConfiguration configuration) throws IOException {
+    public TreeMap<Path, List<Problem>> bulkTest(SourceZip sourceRoot, String testResultsFileName, ParserConfiguration configuration) throws IOException {
         sourceRoot.setParserConfiguration(configuration);
         TreeMap<Path, List<Problem>> results = new TreeMap<>(comparing(o -> o.toString().toLowerCase()));
         sourceRoot.parse((path, result) -> {
@@ -259,10 +295,10 @@ class BulkParseTest {
                 }
             }
         });
-        writeResults(results, testResultsFileName);
+        return writeResults(results, testResultsFileName);
     }
 
-    private void writeResults(TreeMap<Path, List<Problem>> results, String testResultsFileName) throws IOException {
+    private TreeMap<Path, List<Problem>> writeResults(TreeMap<Path, List<Problem>> results, String testResultsFileName) throws IOException {
         Log.info("Writing results...");
 
         Path testResultsDirectory = mavenModuleRoot(BulkParseTest.class)
@@ -288,5 +324,7 @@ class BulkParseTest {
         }
 
         Log.info("Results are in %s", () -> testResultsFile);
+
+        return results;
     }
 }
