@@ -154,8 +154,8 @@ class BulkParseTest {
 //                });
     }
 
-    // @ParameterizedTest
-    // @EnumSource(ParserConfiguration.LanguageLevel.class)
+    @ParameterizedTest
+    @EnumSource(ParserConfiguration.LanguageLevel.class)
     public void jdkSnapshot(ParserConfiguration.LanguageLevel languageLevel) throws IOException {
         TreeMap<Path, List<Problem>> results = doTest(languageLevel, BulkParseTest.downloadUrls_jdk_snapshot, "openjdk", "snapshot");
 
