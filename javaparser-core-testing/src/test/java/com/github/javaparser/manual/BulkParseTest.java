@@ -96,7 +96,7 @@ class BulkParseTest {
         downloadUrls_jdk_snapshot.put(JAVA_11, "http://hg.openjdk.java.net/jdk-updates/jdk11u/archive/1356affa5e44.zip"); // 2020-11-25
         downloadUrls_jdk_snapshot.put(JAVA_12, "http://hg.openjdk.java.net/jdk-updates/jdk12u/archive/390566f1850a.zip"); // 2019-07-25
         downloadUrls_jdk_snapshot.put(JAVA_13, "http://hg.openjdk.java.net/jdk-updates/jdk13u/archive/158d79992f86.zip"); // 2020-11-06
-        downloadUrls_jdk_snapshot.put(JAVA_14, "http://hg.openjdk.java.net/jdk-updates/jdk14u/archive/680a974138a1.zip"); // 2020-07-09
+        //downloadUrls_jdk_snapshot.put(JAVA_14, "http://hg.openjdk.java.net/jdk-updates/jdk14u/archive/680a974138a1.zip"); // 2020-07-09
         //downloadUrls_jdk_snapshot.put(JAVA_15, "http://hg.openjdk.java.net/jdk-updates/jdk15u/archive/ac639af55573.zip"); // 2020-11-18 @ 163 MiB
 
         // The full java source directory -- approximately 160 MiB
@@ -108,8 +108,8 @@ class BulkParseTest {
         downloadUrls_jdk_tip.put(JAVA_11, "http://hg.openjdk.java.net/jdk-updates/jdk11u/archive/tip.zip");
         downloadUrls_jdk_tip.put(JAVA_12, "http://hg.openjdk.java.net/jdk-updates/jdk12u/archive/tip.zip");
         downloadUrls_jdk_tip.put(JAVA_13, "http://hg.openjdk.java.net/jdk-updates/jdk13u/archive/tip.zip");
-        downloadUrls_jdk_tip.put(JAVA_14, "http://hg.openjdk.java.net/jdk-updates/jdk14u/archive/tip.zip");
-        downloadUrls_jdk_tip.put(JAVA_15, "http://hg.openjdk.java.net/jdk-updates/jdk15u/archive/tip.zip");
+        //downloadUrls_jdk_tip.put(JAVA_14, "http://hg.openjdk.java.net/jdk-updates/jdk14u/archive/tip.zip");
+        //downloadUrls_jdk_tip.put(JAVA_15, "http://hg.openjdk.java.net/jdk-updates/jdk15u/archive/tip.zip");
     }
 
 
