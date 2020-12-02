@@ -55,12 +55,15 @@ jobs:
       - name: mkdir -p /tmp/javaparser_bulkparsetest
         run: mkdir -p /tmp/javaparser_bulkparsetest
 
+      - name: ls /tmp/javaparser_bulkparsetest -- ${{ hashFiles('**/BulkParseTest.java') }}
+        run: ls /tmp/javaparser_bulkparsetest
+
       - name: Cache test zips (/tmp/javaparser_bulkparsetest) -- ${{ hashFiles('**/BulkParseTest.java') }}
         uses: actions/cache@v2
         with:
           path: /tmp/javaparser_bulkparsetest
           key: ${{ runner.os }}-tmp-javaparser_bulkparsetest-${{ hashFiles('**/BulkParseTest.java') }}
-          #restore-keys: ${{ runner.os }}-tmp-javaparser_bulkparsetest-
+          restore-keys: ${{ runner.os }}-tmp-javaparser_bulkparsetest-
 
       - name: ls /tmp/javaparser_bulkparsetest -- ${{ hashFiles('**/BulkParseTest.java') }}
         run: ls /tmp/javaparser_bulkparsetest
