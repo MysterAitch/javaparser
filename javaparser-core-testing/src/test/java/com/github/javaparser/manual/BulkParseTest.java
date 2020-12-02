@@ -97,7 +97,7 @@ class BulkParseTest {
         downloadUrls_jdk_snapshot.put(JAVA_12, "http://hg.openjdk.java.net/jdk-updates/jdk12u/archive/390566f1850a.zip"); // 2019-07-25
         downloadUrls_jdk_snapshot.put(JAVA_13, "http://hg.openjdk.java.net/jdk-updates/jdk13u/archive/158d79992f86.zip"); // 2020-11-06
         downloadUrls_jdk_snapshot.put(JAVA_14, "http://hg.openjdk.java.net/jdk-updates/jdk14u/archive/680a974138a1.zip"); // 2020-07-09
-        downloadUrls_jdk_snapshot.put(JAVA_15, "http://hg.openjdk.java.net/jdk-updates/jdk15u/archive/ac639af55573.zip"); // 2020-11-18 @ 163 MiB
+        //downloadUrls_jdk_snapshot.put(JAVA_15, "http://hg.openjdk.java.net/jdk-updates/jdk15u/archive/ac639af55573.zip"); // 2020-11-18 @ 163 MiB
 
         // The full java source directory -- approximately 160 MiB
         downloadUrls_jdk_tip.put(JAVA_6, "http://hg.openjdk.java.net/jdk6/jdk6/archive/tip.zip");
