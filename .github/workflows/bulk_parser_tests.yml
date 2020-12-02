@@ -51,18 +51,20 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Cache test zips (/tmp/javaparser_bulkparsetest)
+
+      - name: mkdir -p /tmp/javaparser_bulkparsetest
+        run: mkdir -p /tmp/javaparser_bulkparsetest
+
+      - name: Cache test zips (/tmp/javaparser_bulkparsetest) -- ${{ hashFiles('/tmp/javaparser_bulkparsetest/**.zip') }}
         uses: actions/cache@v2
         with:
           path: /tmp/javaparser_bulkparsetest
           key: ${{ runner.os }}-tmp-javaparser_bulkparsetest-${{ hashFiles('/tmp/javaparser_bulkparsetest/**.zip') }}
           #restore-keys: ${{ runner.os }}-tmp-javaparser_bulkparsetest-
 
-      - name: mkdir -p /tmp/javaparser_bulkparsetest
-        run: mkdir -p /tmp/javaparser_bulkparsetest
-
-      - name: ls /tmp/javaparser_bulkparsetest
+      - name: ls /tmp/javaparser_bulkparsetest -- ${{ hashFiles('/tmp/javaparser_bulkparsetest/**.zip') }}
         run: ls /tmp/javaparser_bulkparsetest
+
 
 #      - name: Test with Maven (incl. slow tests)
 #        run: ./run_bulk_tests.sh
