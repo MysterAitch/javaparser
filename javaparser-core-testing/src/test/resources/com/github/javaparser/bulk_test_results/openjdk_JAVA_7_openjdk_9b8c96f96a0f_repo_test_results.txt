@@ -1,0 +1,4 @@
+jdk-9b8c96f96a0f/test/java/util/WeakHashMap/GCDuringIteration.java
+(line 118,col 39) Parse error. Found  "equal" <IDENTIFIER>, expected one of  "%=" "&=" "*=" "++" "+=" "--" "-=" "/=" ";" "<<=" "=" ">>=" ">>>=" "^=" "|="
+
+1 problems in 1 files
