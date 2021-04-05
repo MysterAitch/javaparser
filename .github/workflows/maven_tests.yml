@@ -30,7 +30,7 @@ jobs:
 
         ## Additional tests:
         include:
-            ## MacOS combinations
+          ## MacOS combinations
           - os: macos-latest
             jdk: 8
           - os: macos-latest
@@ -44,6 +44,15 @@ jobs:
             jdk: 11
           - os: windows-latest
             jdk: 16
+          - os: ubuntu-latest
+            jdk: 17-ea
+            experimental: true
+          - os: macos-latest
+            jdk: 17-ea
+            experimental: true
+          - os: windows-latest
+            jdk: 17-ea
+            experimental: true
     env:
       OS: ${{ matrix.os }}
       JDK: ${{ matrix.jdk }}
