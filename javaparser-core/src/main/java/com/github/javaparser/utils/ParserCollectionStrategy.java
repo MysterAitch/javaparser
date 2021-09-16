@@ -75,9 +75,9 @@ public class ParserCollectionStrategy implements CollectionStrategy {
 //                        return CONTINUE;
 //                    }
 
-                    // TODO: Consider this option -- trial option #3
-                    if (javaMatcher.matches(file) && !file.getFileName().toString().equals("module-info.java")) {
+//                    // TODO: Consider this option -- trial option #3
 //                    if (javaMatcher.matches(file) && !file.getFileName().toString().equals("module-info.java")) {
+                    if (javaMatcher.matches(file)) {
                         current_root = getRoot(file).orElse(null);
                         if (current_root != null) {
                             return SKIP_SIBLINGS;
